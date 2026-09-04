@@ -1,36 +1,38 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Chopra Creative
 
-## Getting Started
+Marketing and portfolio site for Chopra Creative, a packaging design studio.
+Built with Next.js (App Router), TypeScript, Tailwind CSS v4, Framer Motion,
+and a React Three Fiber hero scene.
 
-First, run the development server:
+## Getting started
 
 ```bash
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000).
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Structure
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+- `app/` — routes: home, `/work`, `/work/[slug]` (case studies), `/about`, `/contact`
+- `components/` — `layout/`, `home/`, `work/`, `theme/`, `three/`, `ui/`
+- `lib/data.ts` — all case study content, site copy, and typed content models
+- `public/images/` — optimized project imagery sourced from `../Web data`
 
-## Learn More
+## Notes
 
-To learn more about Next.js, take a look at the following resources:
+- Theme is class-based (`.dark` on `<html>`), persisted to `localStorage`,
+  defaulting to the OS preference on first visit. See
+  `components/theme/theme-provider.tsx`.
+- The hero's 3D scene (`components/three/hero-scene.tsx`) is lazy-loaded on
+  the client only, and falls back to a static layered image composition when
+  WebGL is unavailable, the viewport is small, or `prefers-reduced-motion` is
+  set. See `components/three/hero-visual.tsx`.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Scripts
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+- `npm run dev` — start the dev server (Turbopack)
+- `npm run build` — production build
+- `npm run start` — serve the production build
+- `npm run lint` — ESLint
