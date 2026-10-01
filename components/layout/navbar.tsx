@@ -18,8 +18,10 @@ import { cn } from "@/lib/utils";
 
 const NAV_LINKS = [
   { href: "/work", label: "Work" },
+  { href: "/services", label: "Services" },
+  { href: "/#pricing", label: "Pricing" },
+  { href: "/insights", label: "Insights" },
   { href: "/about", label: "About" },
-  { href: "/contact", label: "Contact" },
 ];
 
 const EASE = [0.22, 1, 0.36, 1] as const;
@@ -77,7 +79,7 @@ export function Navbar() {
         <Logo />
 
         <nav
-          className="hidden items-center md:flex"
+          className="hidden items-center xl:flex"
           onPointerLeave={() => setHovered(null)}
         >
           {NAV_LINKS.map((link) => {
@@ -114,14 +116,20 @@ export function Navbar() {
           })}
         </nav>
 
-        <div className="hidden items-center gap-2 md:flex">
+        <div className="hidden items-center gap-2 xl:flex">
           <ThemeToggle />
           <ButtonLink href="/contact" size="sm" magnetic={false}>
             Start a Project
           </ButtonLink>
         </div>
 
-        <div className="flex items-center gap-2 md:hidden">
+        <div className="flex items-center gap-2 xl:hidden">
+          {/* Wrapped: the button's own inline-flex would override `hidden`. */}
+          <span className="hidden sm:block">
+            <ButtonLink href="/contact" size="sm" magnetic={false}>
+              Start a project
+            </ButtonLink>
+          </span>
           <ThemeToggle />
           <button
             type="button"
@@ -157,7 +165,7 @@ export function Navbar() {
             animate={{ opacity: 1, clipPath: "inset(0 0 0% 0 round 28px)" }}
             exit={{ opacity: 0, clipPath: "inset(0 0 100% 0 round 28px)" }}
             transition={{ duration: 0.6, ease: EASE }}
-            className="mx-auto mt-2 max-w-5xl overflow-hidden rounded-[28px] border border-border bg-background/95 backdrop-blur-xl md:hidden"
+            className="mx-auto mt-2 max-w-5xl overflow-hidden rounded-[28px] border border-border bg-background/95 backdrop-blur-xl xl:hidden"
           >
             <nav className="flex flex-col px-6 pt-6 pb-7">
               {NAV_LINKS.map((link, i) => (

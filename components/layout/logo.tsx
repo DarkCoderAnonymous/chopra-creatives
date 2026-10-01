@@ -2,28 +2,29 @@ import Image from "next/image";
 import Link from "next/link";
 import { cn } from "@/lib/utils";
 
+/** Mark + single-line wordmark. */
 export function Logo({ className }: { className?: string }) {
   return (
     <Link
       href="/"
+      aria-label="Chopra Creative — home"
       className={cn(
-        "group flex items-center gap-2.5 text-foreground",
+        "group flex items-center gap-2.5 text-foreground md:gap-3",
         className,
       )}
     >
+      {/* Tightly cropped mark (no transparent padding), so it can sit at a
+          size that balances the wordmark. */}
       <Image
-        src="/images/brand/mark.png"
+        src="/images/brand/mark-tight.png"
         alt=""
-        width={28}
-        height={28}
+        width={164}
+        height={251}
         priority
-        className="h-7 w-7 shrink-0 transition-transform duration-700 ease-[var(--ease-out-expo)] group-hover:rotate-[14deg] group-hover:scale-110"
+        className="h-8 w-auto shrink-0 transition-transform duration-700 ease-[var(--ease-out-expo)] group-hover:rotate-[10deg] group-hover:scale-105 md:h-10"
       />
-      <span className="text-[1.05rem] font-semibold leading-none tracking-tight">
-        Chopra{" "}
-        <span className="font-display text-[1.2rem] italic text-muted transition-colors duration-300 group-hover:text-foreground">
-          Creative
-        </span>
+      <span className="whitespace-nowrap text-[1.2rem] font-semibold leading-none tracking-[-0.025em] md:text-[1.5rem]">
+        Chopra Creative
       </span>
     </Link>
   );

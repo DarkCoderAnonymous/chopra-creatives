@@ -23,14 +23,15 @@ export function CtaSection() {
             </p>
           </Reveal>
           <TextReveal
-            text="Ready for packaging that earns the *shelf?*"
+            text="Ready to bring your product to *market?*"
             accentClassName="text-[#ff8f88]"
             className="mx-auto mt-6 max-w-4xl text-[2.6rem] font-bold leading-[1.02] tracking-[-0.035em] sm:text-6xl lg:text-7xl"
           />
           <Reveal delay={0.3}>
             <p className="mx-auto mt-7 max-w-xl text-base leading-relaxed text-white/65 sm:text-lg">
-              Tell us about your product and we&apos;ll scope the identity,
-              dieline, and 3D work it needs to launch.
+              Tell me about the product, your sales channels and your
+              timeline. I&apos;ll come back with how I&apos;d approach the
+              packaging, production files and ecommerce creative.
             </p>
           </Reveal>
           <Reveal delay={0.4}>

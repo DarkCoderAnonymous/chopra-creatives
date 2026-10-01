@@ -6,12 +6,14 @@ import { useWebglSupport } from "./use-webgl-support";
 
 /**
  * Gate for any heavy WebGL/R3F scene: requires WebGL support, no
- * prefers-reduced-motion, and a viewport at or above `md` (768px).
+ * prefers-reduced-motion, and a viewport at or above `lg` (1024px) —
+ * below that the hero copy spans the full width and the scene would sit
+ * behind it.
  */
 export function useCanRender3D() {
   const prefersReducedMotion = useReducedMotion();
   const webglSupported = useWebglSupport();
-  const isSmallScreen = useMediaQuery("(max-width: 767px)");
+  const isSmallScreen = useMediaQuery("(max-width: 1023px)");
 
   return webglSupported === true && !prefersReducedMotion && !isSmallScreen;
 }

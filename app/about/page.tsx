@@ -3,58 +3,72 @@ import { Container } from "@/components/layout/container";
 import { Reveal } from "@/components/ui/reveal";
 import { TextReveal } from "@/components/ui/text-reveal";
 import { Eyebrow } from "@/components/ui/section-heading";
+import { FounderSection } from "@/components/home/founder-section";
+import { PrinciplesSection } from "@/components/home/principles-section";
 import { ProcessSection } from "@/components/home/process-section";
-import { CapabilitiesSection } from "@/components/home/capabilities-section";
-import { PaletteSection } from "@/components/about/palette-section";
+import { ServicesSection } from "@/components/home/services-section";
 import { CtaSection } from "@/components/home/cta-section";
+import { founder } from "@/lib/data";
+import { breadcrumbSchema, JsonLd, personSchema } from "@/lib/schema";
 
 export const metadata: Metadata = {
-  title: "About",
+  title: "About — Founder-Led Packaging Design Studio",
   description:
-    "Chopra Creative is a packaging design studio working across brand identity, structural dielines, and 3D visualization for retail products.",
+    "Chopra Creative is a specialist product packaging and ecommerce design studio, led by a packaging designer who designs for both the shelf and the press.",
+  alternates: { canonical: "/about" },
 };
 
 export default function AboutPage() {
+  const person = personSchema();
+
   return (
     <>
-      <section className="pt-36 pb-20 md:pt-48 md:pb-28">
+      <JsonLd
+        data={[
+          breadcrumbSchema([
+            { name: "Home", path: "/" },
+            { name: "About", path: "/about" },
+          ]),
+          ...(person ? [person] : []),
+        ]}
+      />
+      <section className="pt-36 pb-6 md:pt-48 md:pb-10">
         <Container className="max-w-4xl">
           <Reveal>
-            <Eyebrow>About the studio</Eyebrow>
+            <Eyebrow>About</Eyebrow>
           </Reveal>
           <TextReveal
             as="h1"
             immediate
             delay={0.1}
-            text="Packaging is a *system,* not a graphic."
-            className="mt-4 text-[2.6rem] font-bold leading-[1.02] tracking-[-0.035em] sm:text-6xl lg:text-7xl"
+            text={`A specialist packaging & ecommerce design studio, led by *${founder.name}.*`}
+            className="mt-4 text-[2.4rem] font-bold leading-[1.04] tracking-[-0.035em] sm:text-6xl lg:text-[4.25rem]"
           />
           <Reveal delay={0.4}>
             <div className="mt-8 space-y-5 text-lg leading-relaxed text-muted">
               <p>
-                Chopra Creative designs packaging for brands that have to win
-                on a physical shelf and on a scrolling screen at the same
-                time. That means every project runs through the same
-                discipline: a visual identity built around the product’s
-                category, a structural dieline engineered to exact print
-                specifications, and a 3D pass that catches wrapping, seam,
-                and lighting problems before a print run is committed.
+                Chopra Creative is not a large agency and doesn&apos;t pretend
+                to be one. It&apos;s a founder-led studio focused on one thing:
+                product packaging that communicates clearly, gives people a
+                reason to choose the product, and is prepared properly for
+                real-world production.
               </p>
               <p>
-                We’ve worked across nutraceuticals, pet care, gourmet snacks,
-                kitchenware, food staples, and one-off custom packaging —
-                each with its own structure, from liposomal supplement jars
-                to flexographic rice pouches to a hand-assembled cup sleeve.
-                The category changes; the process doesn’t.
+                The portfolio spans supplements, pet care, gourmet snacks,
+                kitchenware, food staples and custom packaging — jar labels,
+                gusset pouches, stand-up pouches, folding cartons and a
+                hand-assembled cup sleeve. The structure changes from project
+                to project; the discipline doesn&apos;t.
               </p>
             </div>
           </Reveal>
         </Container>
       </section>
 
+      <FounderSection linkToAbout={false} />
+      <PrinciplesSection />
       <ProcessSection />
-      <CapabilitiesSection />
-      <PaletteSection />
+      <ServicesSection eyebrow="What I do" title="Packaging at the core, extended into *ecommerce.*" />
       <CtaSection />
     </>
   );

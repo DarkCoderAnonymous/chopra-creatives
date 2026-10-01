@@ -5,9 +5,9 @@ import { HeroAmbient } from "./hero-ambient";
 
 export function HeroSimple() {
   return (
-    <section className="relative overflow-hidden pt-28 pb-14 md:flex md:min-h-[100svh] md:items-center md:pt-28 md:pb-16">
+    <section className="relative overflow-hidden pt-28 pb-14 lg:flex lg:min-h-[100svh] lg:items-center lg:pt-28 lg:pb-16">
       <HeroAmbient />
-      <div className="absolute inset-0 hidden md:block">
+      <div className="absolute inset-0 hidden lg:block">
         <HeroVisual />
         <div
           aria-hidden

@@ -54,7 +54,7 @@ export default function OgImage() {
             letterSpacing: -1,
           }}
         >
-          Packaging that gets picked off crowded shelves.
+          Packaging that communicates, sells and is ready for production.
         </div>
         <div
           style={{
@@ -64,7 +64,7 @@ export default function OgImage() {
             color: "#a7a1c9",
           }}
         >
-          Brand identity · Structural dielines · 3D visualization
+          Product packaging & ecommerce design studio
         </div>
       </div>
     ),

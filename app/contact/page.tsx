@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import { Mail } from "lucide-react";
 import { Container } from "@/components/layout/container";
 import { Reveal } from "@/components/ui/reveal";
@@ -8,30 +9,34 @@ import { ContactForm } from "@/components/contact/contact-form";
 import { readinessChecklist, siteConfig } from "@/lib/data";
 
 export const metadata: Metadata = {
-  title: "Contact",
+  title: "Start a Project — Packaging & Ecommerce Design",
   description:
-    "Start a packaging project with Chopra Creative — brand identity, structural dielines, and 3D visualization.",
+    "Start a product packaging or ecommerce design project with Chopra Creative. Share your product, SKUs, channels, timeline and budget to get a proposal.",
+  alternates: { canonical: "/contact" },
 };
 
 export default function ContactPage() {
   return (
     <section className="pt-36 pb-24 md:pt-48 md:pb-32">
-      <Container className="grid gap-16 lg:grid-cols-[1fr_1.1fr] lg:gap-20">
-        <div>
+      {/* Mobile order: intro → form → checklist. Desktop: intro and
+          checklist on the left, the form sticky on the right. */}
+      <Container className="grid gap-12 lg:grid-cols-[1fr_1.1fr] lg:gap-x-20 lg:gap-y-0">
+        <div className="lg:col-start-1 lg:row-start-1">
           <Reveal>
-            <Eyebrow>Contact</Eyebrow>
+            <Eyebrow>Start a project</Eyebrow>
           </Reveal>
           <TextReveal
             as="h1"
             immediate
             delay={0.1}
-            text="Let's scope your *packaging.*"
+            text="Let's bring your product to *market.*"
             className="mt-4 text-[2.6rem] font-bold leading-[1.02] tracking-[-0.035em] sm:text-6xl lg:text-7xl"
           />
           <Reveal delay={0.35}>
             <p className="mt-6 max-w-md text-lg leading-relaxed text-muted">
-              Send over what you’re working on and we’ll follow up with how
-              we’d approach the identity, dieline, and 3D work.
+              Tell me about the product, where it sells and what it needs.
+              After a short qualification and consultation you&apos;ll get a
+              written proposal — payment only once the scope is agreed.
             </p>
           </Reveal>
 
@@ -48,9 +53,24 @@ export default function ContactPage() {
               </span>
             </a>
           </Reveal>
+        </div>
 
+        <Reveal
+          delay={0.3}
+          className="lg:sticky lg:top-28 lg:col-start-2 lg:row-span-2 lg:row-start-1 lg:self-start"
+        >
+          <div className="relative overflow-hidden rounded-[32px] border border-border bg-surface p-6 shadow-[0_40px_100px_-50px_color-mix(in_oklab,var(--grad-c)_50%,transparent)] sm:p-10">
+            <div
+              aria-hidden
+              className="pointer-events-none absolute -right-24 -top-24 h-64 w-64 rounded-full bg-[radial-gradient(closest-side,color-mix(in_oklab,var(--grad-e)_25%,transparent),transparent)] blur-2xl"
+            />
+            <ContactForm />
+          </div>
+        </Reveal>
+
+        <div className="lg:col-start-1 lg:row-start-2">
           <Reveal delay={0.55}>
-            <div className="mt-14">
+            <div className="lg:mt-14">
               <h2 className="text-[11px] font-semibold uppercase tracking-[0.2em] text-muted">
                 Good to have ready
               </h2>
@@ -67,19 +87,17 @@ export default function ContactPage() {
                   </li>
                 ))}
               </ul>
+              <p className="mt-8 text-sm text-muted">
+                Not ready for a full project?{" "}
+                <Link href="/services#product-launch-audit" className="link-underline text-foreground">
+                  Start with a Product Launch Audit
+                </Link>
+                .
+              </p>
             </div>
           </Reveal>
         </div>
 
-        <Reveal delay={0.3} className="lg:sticky lg:top-28 lg:self-start">
-          <div className="relative overflow-hidden rounded-[32px] border border-border bg-surface p-6 shadow-[0_40px_100px_-50px_color-mix(in_oklab,var(--grad-c)_50%,transparent)] sm:p-10">
-            <div
-              aria-hidden
-              className="pointer-events-none absolute -right-24 -top-24 h-64 w-64 rounded-full bg-[radial-gradient(closest-side,color-mix(in_oklab,var(--grad-e)_25%,transparent),transparent)] blur-2xl"
-            />
-            <ContactForm />
-          </div>
-        </Reveal>
       </Container>
     </section>
   );

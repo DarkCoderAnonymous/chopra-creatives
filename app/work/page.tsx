@@ -9,9 +9,10 @@ import { CtaSection } from "@/components/home/cta-section";
 import { caseStudies, industries } from "@/lib/data";
 
 export const metadata: Metadata = {
-  title: "Work",
+  title: "Packaging Design Case Studies",
   description:
-    "Packaging design case studies across supplements, pet care, snacks, kitchenware, food staples, and custom event packaging.",
+    "Product packaging design case studies — supplement, pet, snack, food and kitchenware packaging, each with strategy, dielines and production-ready artwork.",
+  alternates: { canonical: "/work" },
 };
 
 export default function WorkPage() {
@@ -26,14 +27,14 @@ export default function WorkPage() {
             as="h1"
             immediate
             delay={0.1}
-            text="Six packaging systems, six retail *categories.*"
+            text="Packaging case studies, from strategy to *production.*"
             className="mt-4 max-w-4xl text-[2.6rem] font-bold leading-[1.02] tracking-[-0.035em] sm:text-6xl lg:text-7xl"
           />
           <Reveal delay={0.4}>
             <p className="mt-7 max-w-xl text-lg leading-relaxed text-muted">
-              Every project runs the same discipline: identity, structural
-              dieline, 3D visualization, and a check against how it actually
-              performs on shelf and on screen.
+              Every project shows the problem, the strategy, the design
+              decisions and the production work behind it — dielines,
+              print-ready artwork and 3D renders.
             </p>
           </Reveal>
         </Container>

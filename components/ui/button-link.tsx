@@ -4,7 +4,7 @@ import type { ReactNode } from "react";
 import { cn } from "@/lib/utils";
 import { Magnetic } from "./magnetic";
 
-type Variant = "primary" | "secondary" | "light" | "outline-light";
+type Variant = "primary" | "secondary" | "light" | "outline-light" | "inverse";
 type Size = "md" | "sm";
 
 const VARIANTS: Record<Variant, string> = {
@@ -17,6 +17,9 @@ const VARIANTS: Record<Variant, string> = {
   light: "bg-white text-[#0a0917] hover:shadow-[0_18px_44px_-14px_rgba(255,255,255,0.45)]",
   "outline-light":
     "border border-white/20 bg-white/5 text-white backdrop-blur-md hover:border-white/50 hover:bg-white/10",
+  // For use on a `bg-foreground` surface: flips with the theme.
+  inverse:
+    "bg-background text-foreground hover:shadow-[0_18px_44px_-14px_color-mix(in_oklab,var(--grad-b)_60%,transparent)]",
 };
 
 const SIZES: Record<Size, string> = {

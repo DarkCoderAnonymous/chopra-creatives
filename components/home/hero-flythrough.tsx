@@ -48,7 +48,7 @@ export function HeroFlythrough() {
       <div className="sticky top-0 h-screen overflow-hidden">
         <HeroAmbient />
 
-        <div className="absolute inset-y-0 right-0 left-[16%] xl:left-[22%]">
+        <div className="absolute inset-y-0 right-0 left-[34%] xl:left-[22%]">
           <HeroScene scrollProgress={scrollProgress} />
         </div>
 

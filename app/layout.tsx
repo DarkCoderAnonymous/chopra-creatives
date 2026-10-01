@@ -26,9 +26,19 @@ export const metadata: Metadata = {
   metadataBase: new URL(siteConfig.url),
   title: {
     default: `${siteConfig.name} — ${siteConfig.tagline}`,
-    template: `%s — ${siteConfig.name}`,
+    template: `%s | ${siteConfig.name}`,
   },
   description: siteConfig.description,
+  applicationName: siteConfig.name,
+  keywords: [
+    "product packaging design",
+    "packaging design studio",
+    "packaging design services",
+    "production ready packaging design",
+    "packaging dieline design",
+    "Amazon A+ content design",
+    "Shopify product design",
+  ],
   openGraph: {
     type: "website",
     title: `${siteConfig.name} — ${siteConfig.tagline}`,
