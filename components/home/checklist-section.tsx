@@ -1,53 +1,57 @@
-import Link from "next/link";
-import { CheckCircle2 } from "lucide-react";
+import { Check } from "lucide-react";
 import { Container } from "@/components/layout/container";
 import { Reveal } from "@/components/ui/reveal";
+import { TextReveal } from "@/components/ui/text-reveal";
+import { ButtonLink } from "@/components/ui/button-link";
+import { Eyebrow } from "@/components/ui/section-heading";
+import { SpotlightCard } from "@/components/ui/spotlight-card";
 import { readinessChecklist } from "@/lib/data";
 
 export function ChecklistSection() {
   return (
-    <section className="border-t border-border bg-surface py-20 md:py-28">
-      <Container className="grid gap-12 lg:grid-cols-[0.9fr_1.1fr] lg:gap-16">
-        <div>
+    <section className="py-24 md:py-32">
+      <Container className="grid gap-14 lg:grid-cols-[0.9fr_1.1fr] lg:gap-20">
+        <div className="lg:sticky lg:top-32 lg:self-start">
           <Reveal>
-            <p className="text-xs font-semibold uppercase tracking-wider text-accent">
-              Before you reach out
-            </p>
+            <Eyebrow>Before you reach out</Eyebrow>
           </Reveal>
-          <Reveal delay={0.05}>
-            <h2 className="mt-3 text-3xl font-bold tracking-tight sm:text-4xl">
-              A quick gut-check on retail readiness.
-            </h2>
-          </Reveal>
-          <Reveal delay={0.1}>
-            <p className="mt-4 max-w-md text-base leading-relaxed text-muted">
+          <TextReveal
+            text="A quick gut-check on *retail readiness.*"
+            className="mt-4 text-[2.1rem] font-bold leading-[1.05] tracking-[-0.03em] sm:text-5xl"
+          />
+          <Reveal delay={0.2}>
+            <p className="mt-5 max-w-md text-base leading-relaxed text-muted sm:text-lg">
               These are the questions every one of our packaging systems has
               had to answer. If any of them give you pause, that&apos;s
               usually where a project starts.
             </p>
           </Reveal>
-          <Reveal delay={0.15}>
-            <Link
-              href="/contact"
-              className="mt-8 inline-flex items-center gap-2 rounded-full bg-accent px-6 py-3.5 text-sm font-semibold text-accent-foreground transition-transform hover:scale-[1.03] active:scale-[0.98]"
-            >
-              Talk through your packaging
-            </Link>
+          <Reveal delay={0.3}>
+            <div className="mt-9">
+              <ButtonLink href="/contact" arrow>
+                Talk through your packaging
+              </ButtonLink>
+            </div>
           </Reveal>
         </div>
 
         <ul className="space-y-4">
           {readinessChecklist.map((item, i) => (
-            <Reveal key={item} delay={i * 0.07}>
-              <li className="flex items-start gap-3 rounded-2xl border border-border bg-background p-5">
-                <CheckCircle2
-                  className="mt-0.5 h-5 w-5 shrink-0 text-accent"
-                  aria-hidden
-                />
-                <span className="text-sm leading-relaxed text-foreground/90 sm:text-base">
+            <Reveal key={item} as="li" delay={i * 0.08}>
+              <SpotlightCard className="group flex items-start gap-5 p-6 md:p-7">
+                <span className="font-display text-2xl italic leading-none text-muted/70">
+                  0{i + 1}
+                </span>
+                <span className="flex-1 text-base leading-relaxed text-foreground/90">
                   {item}
                 </span>
-              </li>
+                <span
+                  aria-hidden
+                  className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full border border-border text-muted transition-[background-color,color,border-color,transform] duration-500 ease-[var(--ease-out-expo)] group-hover:scale-110 group-hover:border-transparent group-hover:bg-[var(--grad-b)] group-hover:text-white"
+                >
+                  <Check className="h-4 w-4" />
+                </span>
+              </SpotlightCard>
             </Reveal>
           ))}
         </ul>

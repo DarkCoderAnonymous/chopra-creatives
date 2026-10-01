@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import { Container } from "@/components/layout/container";
 import { Reveal } from "@/components/ui/reveal";
+import { TextReveal } from "@/components/ui/text-reveal";
+import { Eyebrow } from "@/components/ui/section-heading";
 import { ProcessSection } from "@/components/home/process-section";
 import { CapabilitiesSection } from "@/components/home/capabilities-section";
 import { PaletteSection } from "@/components/about/palette-section";
@@ -15,20 +17,20 @@ export const metadata: Metadata = {
 export default function AboutPage() {
   return (
     <>
-      <section className="pt-32 pb-16 md:pt-40 md:pb-20">
-        <Container className="max-w-3xl">
+      <section className="pt-36 pb-20 md:pt-48 md:pb-28">
+        <Container className="max-w-4xl">
           <Reveal>
-            <p className="text-xs font-semibold uppercase tracking-wider text-accent">
-              About the studio
-            </p>
+            <Eyebrow>About the studio</Eyebrow>
           </Reveal>
-          <Reveal delay={0.05}>
-            <h1 className="mt-3 text-4xl font-bold tracking-tight sm:text-5xl">
-              Packaging is a system, not a graphic.
-            </h1>
-          </Reveal>
-          <Reveal delay={0.1}>
-            <div className="mt-6 space-y-5 text-lg leading-relaxed text-muted">
+          <TextReveal
+            as="h1"
+            immediate
+            delay={0.1}
+            text="Packaging is a *system,* not a graphic."
+            className="mt-4 text-[2.6rem] font-bold leading-[1.02] tracking-[-0.035em] sm:text-6xl lg:text-7xl"
+          />
+          <Reveal delay={0.4}>
+            <div className="mt-8 space-y-5 text-lg leading-relaxed text-muted">
               <p>
                 Chopra Creative designs packaging for brands that have to win
                 on a physical shelf and on a scrolling screen at the same

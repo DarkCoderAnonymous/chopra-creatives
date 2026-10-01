@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import { Container } from "@/components/layout/container";
 import { Reveal } from "@/components/ui/reveal";
+import { TextReveal } from "@/components/ui/text-reveal";
+import { Eyebrow } from "@/components/ui/section-heading";
 import { WorkExplorer } from "@/components/work/work-explorer";
 import { WorkShowcase } from "@/components/work/work-showcase";
 import { CtaSection } from "@/components/home/cta-section";
@@ -15,27 +17,27 @@ export const metadata: Metadata = {
 export default function WorkPage() {
   return (
     <>
-      <section className="pt-32 pb-16 md:pt-40 md:pb-20">
+      <section className="pt-36 pb-16 md:pt-48 md:pb-20">
         <Container>
           <Reveal>
-            <p className="text-xs font-semibold uppercase tracking-wider text-accent">
-              Work
-            </p>
+            <Eyebrow>Work</Eyebrow>
           </Reveal>
-          <Reveal delay={0.05}>
-            <h1 className="mt-3 max-w-2xl text-4xl font-bold tracking-tight sm:text-5xl">
-              Six packaging systems, six retail categories.
-            </h1>
-          </Reveal>
-          <Reveal delay={0.1}>
-            <p className="mt-5 max-w-xl text-lg leading-relaxed text-muted">
+          <TextReveal
+            as="h1"
+            immediate
+            delay={0.1}
+            text="Six packaging systems, six retail *categories.*"
+            className="mt-4 max-w-4xl text-[2.6rem] font-bold leading-[1.02] tracking-[-0.035em] sm:text-6xl lg:text-7xl"
+          />
+          <Reveal delay={0.4}>
+            <p className="mt-7 max-w-xl text-lg leading-relaxed text-muted">
               Every project runs the same discipline: identity, structural
               dieline, 3D visualization, and a check against how it actually
               performs on shelf and on screen.
             </p>
           </Reveal>
         </Container>
-        <Reveal delay={0.15}>
+        <Reveal delay={0.5}>
           <div className="mt-14">
             <Container>
               <WorkShowcase />

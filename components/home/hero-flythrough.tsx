@@ -8,9 +8,9 @@ import {
   useScroll,
   useTransform,
 } from "framer-motion";
-import { ChevronDown } from "lucide-react";
 import { Container } from "@/components/layout/container";
 import { HeroContent } from "./hero-content";
+import { HeroAmbient } from "./hero-ambient";
 
 const HeroScene = dynamic(
   () => import("@/components/three/hero-scene").then((mod) => mod.HeroScene),
@@ -35,18 +35,30 @@ export function HeroFlythrough() {
     [0, 0.7, 0.9],
     [1, 1, 0],
   );
+  const contentY = useTransform(scrollYProgress, [0, 0.9], [0, -80]);
+  const contentBlur = useTransform(
+    scrollYProgress,
+    [0.75, 0.9],
+    ["blur(0px)", "blur(8px)"],
+  );
   const hintOpacity = useTransform(scrollYProgress, [0, 0.08], [1, 0]);
 
   return (
     <section ref={trackRef} className="relative h-[250vh]">
       <div className="sticky top-0 h-screen overflow-hidden">
-        <div className="absolute inset-0">
+        <HeroAmbient />
+
+        <div className="absolute inset-y-0 right-0 left-[16%] xl:left-[22%]">
           <HeroScene scrollProgress={scrollProgress} />
         </div>
 
         <div
           aria-hidden
-          className="absolute inset-0 bg-[linear-gradient(to_right,var(--background)_0%,var(--background)_34%,color-mix(in_oklab,var(--background)_65%,transparent)_52%,color-mix(in_oklab,var(--background)_15%,transparent)_72%,transparent_88%)]"
+          className="absolute inset-0 bg-[linear-gradient(to_right,var(--background)_0%,var(--background)_30%,color-mix(in_oklab,var(--background)_80%,transparent)_44%,color-mix(in_oklab,var(--background)_20%,transparent)_62%,transparent_78%)]"
+        />
+        <div
+          aria-hidden
+          className="absolute inset-x-0 top-0 h-32 bg-gradient-to-b from-background to-transparent"
         />
         <div
           aria-hidden
@@ -54,7 +66,7 @@ export function HeroFlythrough() {
         />
 
         <motion.div
-          style={{ opacity: contentOpacity }}
+          style={{ opacity: contentOpacity, y: contentY, filter: contentBlur }}
           className="relative z-10 flex h-full items-center pt-20 pb-16"
         >
           <Container>
@@ -66,10 +78,15 @@ export function HeroFlythrough() {
           style={{ opacity: hintOpacity }}
           className="pointer-events-none absolute inset-x-0 bottom-6 z-10 flex flex-col items-center gap-1 text-muted"
         >
-          <span className="text-[11px] font-semibold uppercase tracking-wider">
+          <span className="text-[10px] font-semibold uppercase tracking-[0.25em]">
             Scroll to explore
           </span>
-          <ChevronDown className="h-4 w-4 animate-bounce" aria-hidden />
+          <span
+            aria-hidden
+            className="relative mt-1 h-10 w-px overflow-hidden bg-border"
+          >
+            <span className="absolute inset-x-0 top-0 h-1/2 animate-[scroll-hint_2s_var(--ease-out-expo)_infinite] bg-foreground/70" />
+          </span>
         </motion.div>
       </div>
     </section>

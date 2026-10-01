@@ -1,16 +1,102 @@
 "use client";
 
-import { useId, useState, type FormEvent } from "react";
+import { useId, useState, type FormEvent, type ReactNode } from "react";
+import { AnimatePresence, motion } from "framer-motion";
 import { Send } from "lucide-react";
 import { siteConfig } from "@/lib/data";
+import { buttonClasses } from "@/components/ui/button-link";
+import { cn } from "@/lib/utils";
+
+type FieldName = "name" | "email" | "message";
+type Errors = Partial<Record<FieldName, string>>;
+
+const FIELD_CLASS =
+  "w-full rounded-2xl border bg-background/70 px-4 py-3.5 text-[15px] text-foreground outline-none transition-[border-color,box-shadow,background-color] duration-300 placeholder:text-muted/70 hover:border-foreground/25 focus:border-accent focus:bg-background focus:shadow-[0_0_0_4px_color-mix(in_oklab,var(--accent)_18%,transparent)]";
+
+function validate(data: FormData): Errors {
+  const errors: Errors = {};
+  if (!String(data.get("name") ?? "").trim()) errors.name = "Please add your name.";
+  const email = String(data.get("email") ?? "").trim();
+  if (!email) errors.email = "Please add an email we can reply to.";
+  else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email))
+    errors.email = "That email doesn't look quite right.";
+  if (!String(data.get("message") ?? "").trim())
+    errors.message = "A line or two about the project helps us scope it.";
+  return errors;
+}
+
+function Field({
+  id,
+  label,
+  error,
+  children,
+}: {
+  id: string;
+  label: string;
+  error?: string;
+  children: ReactNode;
+}) {
+  return (
+    <div>
+      <label htmlFor={id} className="mb-2 block text-sm font-medium text-foreground">
+        {label}
+      </label>
+      {children}
+      <AnimatePresence initial={false}>
+        {error && (
+          <motion.p
+            id={`${id}-error`}
+            initial={{ opacity: 0, height: 0, y: -4 }}
+            animate={{ opacity: 1, height: "auto", y: 0 }}
+            exit={{ opacity: 0, height: 0, y: -4 }}
+            transition={{ duration: 0.25, ease: [0.22, 1, 0.36, 1] }}
+            className="overflow-hidden pt-2 text-xs font-medium text-highlight"
+          >
+            {error}
+          </motion.p>
+        )}
+      </AnimatePresence>
+    </div>
+  );
+}
 
 export function ContactForm() {
   const formId = useId();
   const [status, setStatus] = useState<"idle" | "sent">("idle");
+  const [errors, setErrors] = useState<Errors>({});
+
+  const ids = {
+    name: `${formId}-name`,
+    email: `${formId}-email`,
+    product: `${formId}-product`,
+    message: `${formId}-message`,
+  };
+
+  function fieldProps(name: FieldName) {
+    return {
+      id: ids[name],
+      name,
+      "aria-invalid": errors[name] ? true : undefined,
+      "aria-describedby": errors[name] ? `${ids[name]}-error` : undefined,
+      onInput: () =>
+        errors[name] && setErrors((prev) => ({ ...prev, [name]: undefined })),
+      className: cn(FIELD_CLASS, errors[name] ? "border-highlight" : "border-border"),
+    };
+  }
 
   function handleSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
-    const data = new FormData(event.currentTarget);
+    const form = event.currentTarget;
+    const data = new FormData(form);
+    const nextErrors = validate(data);
+    setErrors(nextErrors);
+
+    const firstInvalid = (Object.keys(nextErrors) as FieldName[])[0];
+    if (firstInvalid) {
+      document.getElementById(ids[firstInvalid])?.focus();
+      return;
+    }
+
     const name = String(data.get("name") ?? "");
     const email = String(data.get("email") ?? "");
     const product = String(data.get("product") ?? "");
@@ -25,88 +111,57 @@ export function ContactForm() {
       message,
     ].join("\n");
 
-    window.location.href = `mailto:${siteConfig.email}?subject=${encodeURIComponent(
-      subject,
-    )}&body=${encodeURIComponent(body)}`;
+    window.location.assign(
+      `mailto:${siteConfig.email}?subject=${encodeURIComponent(
+        subject,
+      )}&body=${encodeURIComponent(body)}`,
+    );
 
     setStatus("sent");
   }
 
   return (
-    <form onSubmit={handleSubmit} className="space-y-5" noValidate>
+    <form onSubmit={handleSubmit} className="relative space-y-5" noValidate>
       <div className="grid gap-5 sm:grid-cols-2">
-        <div>
-          <label
-            htmlFor={`${formId}-name`}
-            className="mb-2 block text-sm font-medium text-foreground"
-          >
-            Name
-          </label>
+        <Field id={ids.name} label="Name" error={errors.name}>
+          <input type="text" required autoComplete="name" {...fieldProps("name")} />
+        </Field>
+        <Field id={ids.email} label="Email" error={errors.email}>
           <input
-            id={`${formId}-name`}
-            name="name"
-            type="text"
-            required
-            autoComplete="name"
-            className="w-full rounded-xl border border-border bg-background px-4 py-3 text-sm text-foreground outline-none transition-colors focus:border-accent focus-visible:ring-2 focus-visible:ring-ring"
-          />
-        </div>
-        <div>
-          <label
-            htmlFor={`${formId}-email`}
-            className="mb-2 block text-sm font-medium text-foreground"
-          >
-            Email
-          </label>
-          <input
-            id={`${formId}-email`}
-            name="email"
             type="email"
             required
             autoComplete="email"
-            className="w-full rounded-xl border border-border bg-background px-4 py-3 text-sm text-foreground outline-none transition-colors focus:border-accent focus-visible:ring-2 focus-visible:ring-ring"
+            inputMode="email"
+            {...fieldProps("email")}
           />
-        </div>
+        </Field>
       </div>
 
-      <div>
-        <label
-          htmlFor={`${formId}-product`}
-          className="mb-2 block text-sm font-medium text-foreground"
-        >
-          Product or brand
-        </label>
+      <Field id={ids.product} label="Product or brand">
         <input
-          id={`${formId}-product`}
+          id={ids.product}
           name="product"
           type="text"
-          className="w-full rounded-xl border border-border bg-background px-4 py-3 text-sm text-foreground outline-none transition-colors focus:border-accent focus-visible:ring-2 focus-visible:ring-ring"
+          className={cn(FIELD_CLASS, "border-border")}
         />
-      </div>
+      </Field>
 
-      <div>
-        <label
-          htmlFor={`${formId}-message`}
-          className="mb-2 block text-sm font-medium text-foreground"
-        >
-          Tell us about the project
-        </label>
+      <Field id={ids.message} label="Tell us about the project" error={errors.message}>
         <textarea
-          id={`${formId}-message`}
-          name="message"
           rows={5}
           required
           placeholder="Packaging structure, timeline, number of SKUs — whatever you've got."
-          className="w-full resize-none rounded-xl border border-border bg-background px-4 py-3 text-sm text-foreground outline-none transition-colors focus:border-accent focus-visible:ring-2 focus-visible:ring-ring"
+          {...fieldProps("message")}
+          className={cn(fieldProps("message").className, "resize-none")}
         />
-      </div>
+      </Field>
 
-      <button
-        type="submit"
-        className="inline-flex w-full items-center justify-center gap-2 rounded-full bg-accent px-6 py-3.5 text-sm font-semibold text-accent-foreground transition-transform hover:scale-[1.01] active:scale-[0.99] sm:w-auto"
-      >
+      <button type="submit" className={cn(buttonClasses("primary"), "w-full sm:w-auto")}>
         Send via email
-        <Send className="h-4 w-4" aria-hidden />
+        <Send
+          className="h-4 w-4 transition-transform duration-500 ease-[var(--ease-out-expo)] group-hover/btn:-translate-y-0.5 group-hover/btn:translate-x-0.5"
+          aria-hidden
+        />
       </button>
 
       <p role="status" className="text-xs text-muted">

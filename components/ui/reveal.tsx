@@ -9,7 +9,7 @@ type RevealProps = {
   className?: string;
   delay?: number;
   y?: number;
-  as?: "div" | "span";
+  as?: "div" | "span" | "li";
   once?: boolean;
 };
 
@@ -17,33 +17,41 @@ export function Reveal({
   children,
   className,
   delay = 0,
-  y = 24,
+  y = 28,
   once = true,
+  as = "div",
 }: RevealProps) {
+  const Component = motion[as];
   const prefersReducedMotion = useReducedMotion();
 
   const variants: Variants = {
-    hidden: { opacity: 0, y: prefersReducedMotion ? 0 : y },
+    hidden: prefersReducedMotion
+      ? { opacity: 0 }
+      : { opacity: 0, y, filter: "blur(6px)" },
     visible: {
       opacity: 1,
       y: 0,
+      filter: "blur(0px)",
       transition: {
-        duration: 0.6,
+        duration: prefersReducedMotion ? 0.3 : 0.9,
         delay,
-        ease: [0.16, 1, 0.3, 1],
+        ease: [0.22, 1, 0.36, 1],
       },
+      // A lingering filter would flatten 3D children (TiltCard) and create
+      // a stacking context, so drop it once the reveal finishes.
+      transitionEnd: { filter: "none" },
     },
   };
 
   return (
-    <motion.div
+    <Component
       className={cn(className)}
       initial="hidden"
       whileInView="visible"
-      viewport={{ once, margin: "-10% 0px -10% 0px" }}
+      viewport={{ once, margin: "0px 0px -10% 0px" }}
       variants={variants}
     >
       {children}
-    </motion.div>
+    </Component>
   );
 }

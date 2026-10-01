@@ -18,21 +18,22 @@ export function TiltCard({ children, className }: TiltCardProps) {
   const ref = useRef<HTMLDivElement>(null);
   const prefersReducedMotion = useReducedMotion();
 
-  const rotateX = useSpring(0, { stiffness: 220, damping: 20, mass: 0.4 });
-  const rotateY = useSpring(0, { stiffness: 220, damping: 20, mass: 0.4 });
+  const rotateX = useSpring(0, { stiffness: 160, damping: 22, mass: 0.6 });
+  const rotateY = useSpring(0, { stiffness: 160, damping: 22, mass: 0.6 });
   const glowX = useSpring(50, { stiffness: 220, damping: 24 });
   const glowY = useSpring(50, { stiffness: 220, damping: 24 });
 
-  const transform = useMotionTemplate`perspective(900px) scale3d(1.02, 1.02, 1.02) rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
-  const glowBackground = useMotionTemplate`radial-gradient(320px circle at ${glowX}% ${glowY}%, color-mix(in oklab, var(--accent) 22%, transparent), transparent 70%)`;
+  const transform = useMotionTemplate`perspective(1200px) rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
+  const glowBackground = useMotionTemplate`radial-gradient(320px circle at ${glowX}% ${glowY}%, rgba(255, 255, 255, 0.16), transparent 70%)`;
 
   function handlePointerMove(event: PointerEvent<HTMLDivElement>) {
-    if (prefersReducedMotion || !ref.current) return;
+    if (prefersReducedMotion || event.pointerType !== "mouse" || !ref.current)
+      return;
     const rect = ref.current.getBoundingClientRect();
     const px = (event.clientX - rect.left) / rect.width;
     const py = (event.clientY - rect.top) / rect.height;
-    rotateY.set((px - 0.5) * 16);
-    rotateX.set((0.5 - py) * 16);
+    rotateY.set((px - 0.5) * 7);
+    rotateX.set((0.5 - py) * 7);
     glowX.set(px * 100);
     glowY.set(py * 100);
   }

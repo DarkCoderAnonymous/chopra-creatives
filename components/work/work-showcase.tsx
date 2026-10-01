@@ -20,14 +20,14 @@ function FlatShowcase() {
         <Link
           key={study.slug}
           href={`/work/${study.slug}`}
-          className="group relative aspect-[3/4] w-48 shrink-0 snap-start overflow-hidden rounded-2xl border border-border shadow-lg sm:w-56"
+          className="group relative aspect-[3/4] w-52 shrink-0 snap-start overflow-hidden rounded-3xl border border-border shadow-[0_20px_50px_-25px_rgba(10,9,23,0.6)] sm:w-60"
         >
           <Image
             src={study.heroImage.src}
             alt={study.heroImage.alt}
             fill
             sizes="224px"
-            className="object-cover transition-transform duration-500 group-hover:scale-110"
+            className="object-cover transition-transform duration-[1200ms] ease-[var(--ease-out-expo)] group-hover:scale-110"
           />
           <div className="absolute inset-0 bg-gradient-to-t from-black/75 via-black/10 to-transparent" />
           <div className="absolute inset-x-3 bottom-3 text-white">
@@ -58,7 +58,7 @@ export function WorkShowcase() {
         <FlatShowcase />
       )}
       {canRender3D && (
-        <p className="mt-2 text-center text-xs text-muted">
+        <p className="mt-2 text-center text-[11px] font-medium uppercase tracking-[0.18em] text-muted">
           Hover a panel to preview it, click to open the full case study.
         </p>
       )}

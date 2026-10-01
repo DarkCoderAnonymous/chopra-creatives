@@ -53,9 +53,15 @@
   --color-highlight: var(--highlight);
   --color-ring: var(--ring);
   --font-sans: var(--font-jakarta);
-  --animate-marquee: marquee 34s linear infinite;
+  --font-display: var(--font-instrument);
+  --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-out-quint: cubic-bezier(0.22, 1, 0.36, 1);
+  --animate-marquee: marquee 48s linear infinite;
   --animate-float: float 7s ease-in-out infinite;
   --animate-float-slow: float 11s ease-in-out infinite;
+  --animate-aurora: aurora 18s ease-in-out infinite alternate;
+  --animate-aurora-slow: aurora 26s ease-in-out infinite alternate-reverse;
+  --animate-pulse-dot: pulse-dot 2.4s ease-out infinite;
 }
 
 * {
@@ -66,10 +72,57 @@ html {
   scroll-behavior: smooth;
 }
 
+/* Lenis drives smooth scrolling when active; native smoothing would fight it. */
+html.lenis,
+html.lenis body {
+  height: auto;
+  scroll-behavior: auto;
+}
+
+.lenis.lenis-stopped {
+  overflow: clip;
+}
+
+button:not(:disabled),
+[role="button"]:not([aria-disabled="true"]) {
+  cursor: pointer;
+}
+
+:focus-visible {
+  outline: 2px solid var(--ring);
+  outline-offset: 3px;
+}
+
 body {
   background: var(--background);
   color: var(--foreground);
   font-family: var(--font-jakarta), ui-sans-serif, system-ui, sans-serif;
+  text-rendering: optimizeLegibility;
+}
+
+/* Film-grain overlay: a static texture that adds print-like depth. */
+body::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: 90;
+  pointer-events: none;
+  opacity: 0.035;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+.dark body::after {
+  opacity: 0.06;
+}
+
+h1,
+h2,
+h3 {
+  text-wrap: balance;
+}
+
+p {
+  text-wrap: pretty;
 }
 
 ::selection {
@@ -100,6 +153,37 @@ body {
   }
 }
 
+@keyframes aurora {
+  0% {
+    transform: translate3d(-8%, -4%, 0) scale(1) rotate(0deg);
+  }
+  50% {
+    transform: translate3d(6%, 6%, 0) scale(1.15) rotate(8deg);
+  }
+  100% {
+    transform: translate3d(10%, -6%, 0) scale(0.95) rotate(-6deg);
+  }
+}
+
+@keyframes scroll-hint {
+  0% {
+    transform: translateY(-100%);
+  }
+  100% {
+    transform: translateY(200%);
+  }
+}
+
+@keyframes pulse-dot {
+  0% {
+    box-shadow: 0 0 0 0 color-mix(in oklab, var(--highlight) 60%, transparent);
+  }
+  80%,
+  100% {
+    box-shadow: 0 0 0 8px transparent;
+  }
+}
+
 @keyframes float {
   0%,
   100% {
@@ -120,6 +204,100 @@ body {
   background-clip: text;
   -webkit-background-clip: text;
   color: transparent;
+}
+
+.font-display {
+  font-family: var(--font-instrument), ui-serif, Georgia, serif;
+  font-weight: 400;
+  letter-spacing: -0.01em;
+}
+
+/* Serif-italic accent word inside a sans headline. */
+.accent-word {
+  font-family: var(--font-instrument), ui-serif, Georgia, serif;
+  font-style: italic;
+  font-weight: 400;
+  letter-spacing: -0.015em;
+  padding-right: 0.06em;
+}
+
+.text-outline {
+  color: transparent;
+  -webkit-text-stroke: 1px color-mix(in oklab, var(--foreground) 45%, transparent);
+}
+
+/* Hairline gradient border that fades in on hover (used by .card-premium). */
+.card-premium {
+  position: relative;
+  isolation: isolate;
+  background: color-mix(in oklab, var(--surface) 92%, transparent);
+  transition:
+    transform 0.5s var(--ease-out-expo),
+    box-shadow 0.5s var(--ease-out-expo),
+    border-color 0.4s ease;
+}
+
+.card-premium::before {
+  content: "";
+  position: absolute;
+  inset: -1px;
+  z-index: -1;
+  border-radius: inherit;
+  padding: 1px;
+  background: linear-gradient(
+    135deg,
+    var(--grad-b),
+    var(--grad-c) 50%,
+    var(--grad-e)
+  );
+  -webkit-mask:
+    linear-gradient(#000 0 0) content-box,
+    linear-gradient(#000 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  opacity: 0;
+  transition: opacity 0.5s var(--ease-out-expo);
+}
+
+.card-premium::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  border-radius: inherit;
+  background: radial-gradient(
+    420px circle at var(--spot-x, 50%) var(--spot-y, 50%),
+    color-mix(in oklab, var(--accent) 14%, transparent),
+    transparent 65%
+  );
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  pointer-events: none;
+}
+
+@media (hover: hover) {
+  .card-premium:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 24px 60px -24px color-mix(in oklab, var(--grad-c) 45%, transparent);
+  }
+  .card-premium:hover::before,
+  .card-premium:hover::after {
+    opacity: 1;
+  }
+}
+
+.link-underline {
+  background-image: linear-gradient(currentColor, currentColor);
+  background-size: 0% 1px;
+  background-position: 100% 100%;
+  background-repeat: no-repeat;
+  transition: background-size 0.5s var(--ease-out-expo), color 0.2s ease;
+}
+
+.link-underline:hover,
+.link-underline:focus-visible {
+  background-size: 100% 1px;
+  background-position: 0% 100%;
 }
 
 .container-px {
