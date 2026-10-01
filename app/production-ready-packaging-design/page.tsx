@@ -26,7 +26,7 @@ export const metadata: Metadata = {
     "Product packaging design that communicates, sells and is ready for production: packaging strategy, design, dielines, print-ready artwork and 3D visualization.",
   alternates: { canonical: PATH },
   openGraph: {
-    title: "Production-Ready Packaging Design — Chopra Creative",
+    title: "Production-Ready Packaging Design | Chopra Creative",
     description:
       "Strategic product packaging design delivered as accurate, production-ready artwork and dielines.",
   },
@@ -36,7 +36,7 @@ export const metadata: Metadata = {
 const REQUIREMENTS = [
   {
     title: "Built on the real dieline",
-    body: "Artwork is laid out on the structure's actual geometry — panels, gussets, seals, zippers and tear notches — not on a flat rectangle.",
+    body: "Artwork is laid out on the structure's actual geometry (panels, gussets, seals, zippers and tear notches) not on a flat rectangle.",
     proof: "Dumbbell Nuts: 160 × 230mm pouch, 45mm bottom gusset, 13mm zipper 25mm below the top edge.",
     slug: "dumbbell-nuts",
   },
@@ -72,7 +72,7 @@ const STRUCTURES = [
 const FAQS = [
   {
     q: "What does production-ready packaging design mean?",
-    a: "It means the approved design is delivered as accurate artwork built on the packaging's real dieline — with correct bleed, trim and safe margins, separated layers and stable zones for barcodes and regulatory copy — so it can go to a printer without being rebuilt.",
+    a: "It means the approved design is delivered as accurate artwork built on the packaging's real dieline (with correct bleed, trim and safe margins, separated layers and stable zones for barcodes and regulatory copy) so it can go to a printer without being rebuilt.",
   },
   {
     q: "Which packaging structures do you design for?",
@@ -140,7 +140,7 @@ export default function ProductionReadyPage() {
           <Reveal delay={0.35}>
             <p className="mt-7 max-w-2xl text-lg leading-relaxed text-muted">
               Strategic product packaging design that communicates what the
-              product is, gives people a reason to choose it — and arrives at
+              product is, gives people a reason to choose it, and arrives at
               your printer as accurate, production-ready artwork.
             </p>
           </Reveal>
@@ -162,7 +162,7 @@ export default function ProductionReadyPage() {
           <SectionHeading
             eyebrow="Design + production"
             title="What *production-ready* actually means."
-            description="A beautiful flat comp is not a dieline. These are the requirements every pack is built to — shown with real specs from the portfolio."
+            description="A beautiful flat comp is not a dieline. These are the requirements every pack is built to, shown with real specs from the portfolio."
           />
           <ol className="mt-14 grid gap-5 md:grid-cols-2">
             {REQUIREMENTS.map((r, i) => (
@@ -269,6 +269,12 @@ export default function ProductionReadyPage() {
             <p className="mt-8 text-sm leading-relaxed text-muted">
               For food packaging design, supplement packaging design, pet,
               beauty and personal-care, and other consumer product brands.
+            </p>
+            <p className="mt-4 text-sm leading-relaxed text-muted">
+              Comparing packaging design agencies? Chopra Creative is a
+              founder-led studio: you work directly with the packaging
+              designer, from strategy through dieline design to the final
+              production files.
             </p>
           </div>
         </Container>

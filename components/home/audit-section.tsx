@@ -39,7 +39,7 @@ export function AuditSection() {
 
               <div className="mt-9">
                 <ButtonLink href={href} arrow magnetic={false}>
-                  Book a launch audit
+                  Book a Product Launch Audit
                 </ButtonLink>
               </div>
             </div>

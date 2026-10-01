@@ -25,29 +25,33 @@ const instrument = Instrument_Serif({
 export const metadata: Metadata = {
   metadataBase: new URL(siteConfig.url),
   title: {
-    default: `${siteConfig.name} — ${siteConfig.tagline}`,
+    default: `${siteConfig.name} | ${siteConfig.tagline}`,
     template: `%s | ${siteConfig.name}`,
   },
   description: siteConfig.description,
   applicationName: siteConfig.name,
   keywords: [
     "product packaging design",
+    "packaging design agency",
+    "packaging designer",
     "packaging design studio",
     "packaging design services",
     "production ready packaging design",
     "packaging dieline design",
     "Amazon A+ content design",
     "Shopify product design",
+    "Amazon packaging design",
+    "ecommerce product design",
   ],
   openGraph: {
     type: "website",
-    title: `${siteConfig.name} — ${siteConfig.tagline}`,
+    title: `${siteConfig.name} | ${siteConfig.tagline}`,
     description: siteConfig.description,
     siteName: siteConfig.name,
   },
   twitter: {
     card: "summary_large_image",
-    title: `${siteConfig.name} — ${siteConfig.tagline}`,
+    title: `${siteConfig.name} | ${siteConfig.tagline}`,
     description: siteConfig.description,
   },
 };

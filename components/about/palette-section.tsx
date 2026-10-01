@@ -18,7 +18,7 @@ export function PaletteSection() {
         <SectionHeading
           eyebrow="Our own identity"
           title="A palette built the same way we build a *client's.*"
-          description="Every packaging system starts with color architecture and type before a single panel gets laid out — including ours."
+          description="Every packaging system starts with color architecture and type before a single panel gets laid out, including ours."
         />
 
         <div className="mt-16 grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-6">

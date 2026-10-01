@@ -7,7 +7,7 @@ export function Logo({ className }: { className?: string }) {
   return (
     <Link
       href="/"
-      aria-label="Chopra Creative — home"
+      aria-label="Chopra Creative home"
       className={cn(
         "group flex items-center gap-2.5 text-foreground md:gap-3",
         className,

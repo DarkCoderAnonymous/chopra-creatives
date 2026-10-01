@@ -1,4 +1,4 @@
-import { Check } from "lucide-react";
+import { Check, Star } from "lucide-react";
 import { Container } from "@/components/layout/container";
 import { SectionHeading } from "@/components/ui/section-heading";
 import { Reveal } from "@/components/ui/reveal";
@@ -20,7 +20,8 @@ function PackageCard({ pkg }: { pkg: ServicePackage }) {
       )}
     >
       {featured && (
-        <span className="absolute right-6 top-6 rounded-full bg-background px-3 py-1 text-[10px] font-semibold uppercase tracking-[0.16em] text-foreground md:right-8 md:top-8">
+        <span className="absolute right-6 top-6 inline-flex items-center gap-1.5 rounded-full bg-background px-3 py-1 text-[10px] font-semibold uppercase tracking-[0.16em] text-foreground md:right-8 md:top-8">
+          <Star aria-hidden className="h-3 w-3 fill-current" />
           Featured
         </span>
       )}
@@ -30,7 +31,7 @@ function PackageCard({ pkg }: { pkg: ServicePackage }) {
       </h3>
       <p className="mt-5 flex items-baseline gap-2">
         <span className={cn("text-sm", featured ? "text-background/60" : "text-muted")}>
-          Starting at
+          From
         </span>
         <span className="text-4xl font-bold tracking-[-0.03em]">{pkg.price}</span>
       </p>
@@ -100,7 +101,7 @@ export function PricingSection() {
         <Reveal delay={0.1}>
           <p className="mt-10 max-w-2xl text-sm leading-relaxed text-muted">
             Packages aren&apos;t bought directly. Every project starts with a
-            short qualification and consultation, then a written proposal —
+            short qualification and consultation, then a written proposal,
             payment only happens once the scope is agreed.
           </p>
         </Reveal>

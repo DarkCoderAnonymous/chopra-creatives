@@ -11,7 +11,7 @@ import { caseStudies, industries } from "@/lib/data";
 export const metadata: Metadata = {
   title: "Packaging Design Case Studies",
   description:
-    "Product packaging design case studies — supplement, pet, snack, food and kitchenware packaging, each with strategy, dielines and production-ready artwork.",
+    "Product packaging design case studies: supplement, pet, snack, food and kitchenware packaging, each with strategy, dielines and production-ready artwork.",
   alternates: { canonical: "/work" },
 };
 
@@ -33,7 +33,7 @@ export default function WorkPage() {
           <Reveal delay={0.4}>
             <p className="mt-7 max-w-xl text-lg leading-relaxed text-muted">
               Every project shows the problem, the strategy, the design
-              decisions and the production work behind it — dielines,
+              decisions and the production work behind it: dielines,
               print-ready artwork and 3D renders.
             </p>
           </Reveal>

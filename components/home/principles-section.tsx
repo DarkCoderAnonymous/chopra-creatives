@@ -12,7 +12,7 @@ export function PrinciplesSection() {
           <SectionHeading
             eyebrow="Packaging is product communication"
             title="Beautiful isn't *enough.*"
-            description="Packaging has to do more than look good. It has to communicate what the product is, why it matters and why someone should choose it — while ultimately becoming a real package that can be produced."
+            description="Packaging has to do more than look good. It has to communicate what the product is, why it matters and why someone should choose it, while ultimately becoming a real package that can be produced."
           />
 
           <ol className="divide-y divide-border border-y border-border">

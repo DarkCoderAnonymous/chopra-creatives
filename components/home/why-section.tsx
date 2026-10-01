@@ -50,7 +50,7 @@ export function WhySection() {
                     href={`/work/${row.study.slug}`}
                     className="link-underline mt-2 inline-block pb-0.5 text-xs font-semibold text-muted hover:text-foreground"
                   >
-                    {row.study.client} — {row.study.industry}
+                    {row.study.client} · {row.study.industry}
                   </Link>
                 </div>
               </div>

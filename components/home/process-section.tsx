@@ -12,7 +12,7 @@ export function ProcessSection() {
           <SectionHeading
             eyebrow="Process"
             title="From product brief to *production-ready* files."
-            description="The same discipline runs across every structure — pouch, jar label, carton or sleeve — and then extends into ecommerce."
+            description="The same discipline runs across every structure (pouch, jar label, carton or sleeve) and then extends into ecommerce."
             className="relative"
           />
 

@@ -4,6 +4,7 @@ import { Container } from "@/components/layout/container";
 import { SectionHeading } from "@/components/ui/section-heading";
 import { Reveal } from "@/components/ui/reveal";
 import { services } from "@/lib/data";
+import { EcosystemFlow } from "./ecosystem-flow";
 import { cn } from "@/lib/utils";
 
 /** Packaging → ecommerce → product marketing, with packaging as the core. */
@@ -68,6 +69,15 @@ export function ServicesSection({
               </article>
             </Reveal>
           ))}
+        </div>
+
+        <div className="mt-16 md:mt-20">
+          <Reveal>
+            <h3 className="text-[11px] font-semibold uppercase tracking-[0.2em] text-muted">
+              One visual system, from package to product page
+            </h3>
+          </Reveal>
+          <EcosystemFlow className="mt-6" />
         </div>
       </Container>
     </section>

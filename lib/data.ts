@@ -58,7 +58,7 @@ export const caseStudies: CaseStudy[] = [
     tagline:
       "Engineering a modern clinical identity for a liposomal cellular-health supplement.",
     industry: "Nutraceuticals",
-    product: "MitroCore NAD+ Advanced — liposomal energy & healthy-aging formula",
+    product: "MitroCore NAD+ Advanced: liposomal energy & healthy-aging formula",
     packagingType: "Full-wrap label on a low-profile wide-mouth jar",
     scope: [
       "Brand integration",
@@ -101,7 +101,7 @@ export const caseStudies: CaseStudy[] = [
       height: 1272,
     },
     challenge: [
-      "The supplement category is crowded with dense medical claims and regulatory tables that leave little room for a clean front panel. MitroCore needed to convey bio-scientific rigor — liposomal absorption, NAD+ support — while staying legible on a small e-commerce thumbnail.",
+      "The supplement category is crowded with dense medical claims and regulatory tables that leave little room for a clean front panel. MitroCore needed to convey bio-scientific rigor (liposomal absorption, NAD+ support) while staying legible on a small e-commerce thumbnail.",
       "The brief called for a systematic panel hierarchy so core benefits wouldn't compete with mandated nutrition and safety copy, and for dieline precision tight enough to survive production without error.",
     ],
     direction: [
@@ -119,7 +119,7 @@ export const caseStudies: CaseStudy[] = [
       },
       {
         title: "Front-of-pack structure",
-        body: "The 90mm front panel is organized into three tiers — benefit statement, supporting claims, and pill-shaped dosage badges (500mg Liposomal, 60 Capsules).",
+        body: "The 90mm front panel is organized into three tiers: benefit statement, supporting claims, and pill-shaped dosage badges (500mg Liposomal, 60 Capsules).",
       },
       {
         title: "Graphic system",
@@ -146,7 +146,7 @@ export const caseStudies: CaseStudy[] = [
       },
     ],
     takeaway:
-      "Structured panel hierarchy and accurate dieline engineering let MitroCore satisfy every regulatory requirement while still reading as a premium, trustworthy daily supplement — on screen and on the shelf.",
+      "Structured panel hierarchy and accurate dieline engineering let MitroCore satisfy every regulatory requirement while still reading as a premium, trustworthy daily supplement, on screen and on the shelf.",
     summary: {
       challenge: "Dense supplement claims and mandated regulatory copy were crowding out a clean, legible front panel.",
       solution: "A three-tier front-panel hierarchy on a calm teal system, with a three-panel wrap engineered to the millimeter.",
@@ -170,7 +170,7 @@ export const caseStudies: CaseStudy[] = [
     tagline:
       "A playful, character-led packaging system for a premium grain-free dog food line.",
     industry: "Pet Care",
-    product: "Complete grain-free dog food — Free Run Chicken",
+    product: "Complete grain-free dog food, Free Run Chicken",
     packagingType: "Resealable flat-bottom gusset pouch, 2kg",
     scope: [
       "Character illustration system",
@@ -207,7 +207,7 @@ export const caseStudies: CaseStudy[] = [
     },
     challenge: [
       "Premium pet care packaging tends to swing between clinical veterinary imagery and generic natural cues that all blend together. Natur Paws needed to read as high quality and grain-free without losing the playful bond between owner and dog.",
-      "The pack also had to communicate three layers at a glance — brand, protein variant, and health benefits — while wrapping cleanly around a multi-panel gusset pouch that gets handled and stacked from every angle.",
+      "The pack also had to communicate three layers at a glance (brand, protein variant, and health benefits) while wrapping cleanly around a multi-panel gusset pouch that gets handled and stacked from every angle.",
     ],
     direction: [
       "A cheerful, modern aesthetic built around custom dog illustrations balances soft lavender with warm yellow and royal purple accents, landing on friendly-yet-premium.",
@@ -220,7 +220,7 @@ export const caseStudies: CaseStudy[] = [
       },
       {
         title: "Color",
-        body: "A tri-color identity — lilac canvas, warm yellow and purple accents, deep purple wordmark — drives shelf recognition and contrast.",
+        body: "A tri-color identity (lilac canvas, warm yellow and purple accents, deep purple wordmark) drives shelf recognition and contrast.",
       },
       {
         title: "Layout & hierarchy",
@@ -246,13 +246,13 @@ export const caseStudies: CaseStudy[] = [
       },
     ],
     takeaway:
-      "Balancing emotional, character-driven illustration with strict panel continuity let Natur Paws work as an active brand ambassador — on shelf, on screen, and in the home.",
+      "Balancing emotional, character-driven illustration with strict panel continuity let Natur Paws work as an active brand ambassador, on shelf, on screen, and in the home.",
     summary: {
       challenge: "Premium dog food needed to read as high quality and grain-free without drifting into clinical or generic “natural” cues.",
       solution: "A character-led illustration system with a clear three-layer hierarchy, built to wrap continuously around a gusset pouch.",
     },
     whyItWorks: [
-      { criterion: "Shelf recognition", body: "A tri-color identity — lilac canvas, warm yellow and purple accents — and character-driven art stand out against more muted competitor packs." },
+      { criterion: "Shelf recognition", body: "A tri-color identity (lilac canvas, warm yellow and purple accents) and character-driven art stand out against more muted competitor packs." },
       { criterion: "Information hierarchy", body: "“FREE RUN CHICKEN” anchors the top fold, the oversized wordmark commands the middle, and a badge closes with the functional benefits." },
       { criterion: "Differentiation", body: "It leads with the bond between owner and dog instead of the clinical veterinary imagery common in premium pet care." },
       { criterion: "Ecommerce & thumbnail", body: "The bold typographic hero keeps the brand mark and “Grain-Free” claim readable at small thumbnail scale." },
@@ -270,7 +270,7 @@ export const caseStudies: CaseStudy[] = [
     tagline:
       "Reworking an iconic mass-market cup-noodle wrap into a bespoke wedding-favor keepsake.",
     industry: "Custom & Event Packaging",
-    product: "Personalized noodle-cup sleeve — “Tony & Linda Flavor”",
+    product: "Personalized noodle-cup sleeve: “Tony & Linda Flavor”",
     packagingType: "Printed cardstock outer sleeve for a cup container",
     scope: [
       "Packaging redesign & parody brand strategy",
@@ -322,7 +322,7 @@ export const caseStudies: CaseStudy[] = [
       "The flat sleeve also had to wrap cleanly around a tapered cup: once folded and taped, every panel boundary needed to stay square and continuous.",
     ],
     direction: [
-      "The direction balances nostalgic familiarity with personal storytelling — keeping the iconic yellow field, red swoosh, and blocky type so the format is instantly recognizable, then rewriting every line for the couple.",
+      "The direction balances nostalgic familiarity with personal storytelling, keeping the iconic yellow field, red swoosh, and blocky type so the format is instantly recognizable, then rewriting every line for the couple.",
       "“Instant Lunch” becomes “Instant Love™” with an interlocking-ring motif; the cook-time callout becomes “Ready in 13 Years”; the flavor line becomes a heritage callout celebrating the couple's shared background.",
     ],
     visualStrategy: [
@@ -358,7 +358,7 @@ export const caseStudies: CaseStudy[] = [
       },
     ],
     takeaway:
-      "Packaging is a complete physical and visual system, not just a graphic — whether it's a retail CPG line or a one-off keepsake, the discipline is the same: structural accuracy, brand hierarchy, and production boundaries.",
+      "Packaging is a complete physical and visual system, not just a graphic. Whether it's a retail CPG line or a one-off keepsake, the discipline is the same: structural accuracy, brand hierarchy, and production boundaries.",
     summary: {
       challenge: "Turn an instantly recognizable mass-market noodle wrap into a personal wedding keepsake without losing its visual authority.",
       solution: "Faithful hierarchy and color with every line rewritten for the couple, on a four-panel sleeve calculated for a tapered cup.",
@@ -366,7 +366,7 @@ export const caseStudies: CaseStudy[] = [
     whyItWorks: [
       { criterion: "Shelf recognition", body: "The iconic yellow field, red swoosh and blocky type are kept, so the format is recognized before a single word is read." },
       { criterion: "Information hierarchy", body: "Wordmark and ring icon anchor the top, the flavor callout curves across the central banner, and photography sits level with product imagery." },
-      { criterion: "Product communication", body: "Every familiar element carries new meaning — “Ready in 13 Years”, a personalized Nutrition Facts table, an event date stamp." },
+      { criterion: "Product communication", body: "Every familiar element carries new meaning: “Ready in 13 Years”, a personalized Nutrition Facts table, an event date stamp." },
       { criterion: "Production", body: "Fold and bleed/crop guides, a dedicated adhesive zone, and panel geometry oriented for the cup’s taper so nothing distorts once glued." },
     ],
     relatedService: "packaging-design",
@@ -399,7 +399,7 @@ export const caseStudies: CaseStudy[] = [
     gallery: [
       {
         src: "/images/work/dumbbell-nuts/shot-1.jpg",
-        alt: "The full Dumbbell Nuts flavor lineup — black pepper, pudina, chilli-flakes, chocolate, and white plain — on a pink backdrop",
+        alt: "The full Dumbbell Nuts flavor lineup (black pepper, pudina, chilli-flakes, chocolate, and white plain) on a pink backdrop",
         width: 2200,
         height: 1244,
       },
@@ -449,7 +449,7 @@ export const caseStudies: CaseStudy[] = [
     },
     challenge: [
       "Gourmet snacks compete against mass-market brands leaning on food photography and niche artisanal brands that often lack shelf structure. Dumbbell Nuts needed both: an artisanal, home-made origin story and a structured, trustworthy health-snack identity.",
-      "The system also had to flex across five distinct flavor profiles — from savory pudina and black pepper to sweet chocolate and cashew laddoo — without losing brand cohesion, and to hold up at both retail-shelf distance and e-commerce thumbnail scale.",
+      "The system also had to flex across five distinct flavor profiles (from savory pudina and black pepper to sweet chocolate and cashew laddoo) without losing brand cohesion, and to hold up at both retail-shelf distance and e-commerce thumbnail scale.",
     ],
     direction: [
       "The pack splits horizontally into two zones: an illustrative base telling an origin story, and a functional upper zone for branding, flavor ID, and ingredient callouts.",
@@ -462,7 +462,7 @@ export const caseStudies: CaseStudy[] = [
       },
       {
         title: "Color architecture",
-        body: "Each flavor gets its own coding — leaf green for pudina, soft pink for chilli-flakes, muted taupe for chocolate, slate grey for black pepper, crisp teal for white plain crunchy.",
+        body: "Each flavor gets its own coding: leaf green for pudina, soft pink for chilli-flakes, muted taupe for chocolate, slate grey for black pepper, crisp teal for white plain crunchy.",
       },
       {
         title: "Imagery",
@@ -474,7 +474,7 @@ export const caseStudies: CaseStudy[] = [
       },
     ],
     system:
-      "The lineup runs on a modular visual matrix — top seal flavor graphic, branding zone, color-coded flavor banner, brush-script product name, and illustrative base — so every new SKU can slot in while keeping full brand recognition.",
+      "The lineup runs on a modular visual matrix (top seal flavor graphic, branding zone, color-coded flavor banner, brush-script product name, and illustrative base) so every new SKU can slot in while keeping full brand recognition.",
     production: [
       "Pouch dimensions: 160mm total width (145mm printable body) × 230mm total height",
       "45mm bottom gusset for shelf stability",
@@ -493,9 +493,9 @@ export const caseStudies: CaseStudy[] = [
       },
     ],
     takeaway:
-      "A repeatable visual system — not just an attractive layout — let Dumbbell Nuts bridge home-made authenticity with commercial shelf performance, and gives the brand a flexible base for future SKUs.",
+      "A repeatable visual system (not just an attractive layout) let Dumbbell Nuts bridge home-made authenticity with commercial shelf performance, and gives the brand a flexible base for future SKUs.",
     summary: {
-      challenge: "A five-flavor gourmet line needed artisanal character and a structured health-snack identity — without losing cohesion across SKUs.",
+      challenge: "A five-flavor gourmet line needed artisanal character and a structured health-snack identity, without losing cohesion across SKUs.",
       solution: "A modular visual matrix: one harvester landscape, one branding zone and color-coded flavor banners that let any new SKU slot in.",
     },
     whyItWorks: [
@@ -503,7 +503,7 @@ export const caseStudies: CaseStudy[] = [
       { criterion: "Information hierarchy", body: "The pack splits into a functional upper zone (brand, flavor ID, ingredient callouts) and an illustrative base that tells the origin story." },
       { criterion: "Differentiation", body: "It sits between mass-market food photography and unstructured artisanal packs: hand-drawn craft with a modern, structured layout." },
       { criterion: "Ecommerce & thumbnail", body: "A clean vertical hierarchy and oversized brush typography keep “CASHEW” readable at mobile thumbnail size." },
-      { criterion: "SKU scalability", body: "Each flavor gets its own color coding inside a fixed matrix — top-seal graphic, branding zone, flavor banner, product name, illustrated base." },
+      { criterion: "SKU scalability", body: "Each flavor gets its own color coding inside a fixed matrix: top-seal graphic, branding zone, flavor banner, product name, illustrated base." },
       { criterion: "Production", body: "160 × 230mm pouch, 45mm bottom gusset, 13mm zipper 25mm below the top, and barcodes locked to flat, non-flexing zones." },
     ],
     relatedService: "brand-growth-system",
@@ -555,7 +555,7 @@ export const caseStudies: CaseStudy[] = [
     },
     challenge: [
       "Bakeware packaging tends to land at one of two extremes: over-technical, industrial aesthetics with no home warmth, or purely decorative designs that fail to communicate material safety and performance.",
-      "The carton needed to carry several differentiators at once — ceramic non-stick properties, non-toxic manufacturing, commercial-grade durability — without turning into a cluttered wall of claims.",
+      "The carton needed to carry several differentiators at once (ceramic non-stick properties, non-toxic manufacturing, commercial-grade durability) without turning into a cluttered wall of claims.",
     ],
     direction: [
       "Warm, organic visual texture pairs with a crisp, structured information layout. A subtle parchment background reinforces the home-baking experience rather than a lab-coat one.",
@@ -598,7 +598,7 @@ export const caseStudies: CaseStudy[] = [
       },
     ],
     takeaway:
-      "When visual hierarchy, technical transparency, and lifestyle positioning work together, a box becomes an active sales interface — a clear signal of product quality across every touchpoint.",
+      "When visual hierarchy, technical transparency, and lifestyle positioning work together, a box becomes an active sales interface and a clear signal of product quality across every touchpoint.",
     summary: {
       challenge: "Communicate ceramic non-stick safety and durability without looking industrial or turning the carton into a wall of claims.",
       solution: "Warm parchment texture over a structured layout, dual photography for both use cases, and four concise claim badges.",
@@ -659,7 +659,7 @@ export const caseStudies: CaseStudy[] = [
     },
     challenge: [
       "Commodity rice packaging often suffers from visual clutter, weak brand distinction, and poor functional communication, forcing shoppers to choose between generic budget brands and hard-to-read imports.",
-      "The redesign needed to establish category authority at retail distance, showcase grain quality directly, and present clear preparation and nutrition data on the secondary panels — without alienating an everyday household audience.",
+      "The redesign needed to establish category authority at retail distance, showcase grain quality directly, and present clear preparation and nutrition data on the secondary panels, without alienating an everyday household audience.",
     ],
     direction: [
       "The direction centers on “Serene Authenticity”: an illustrated landscape silhouette of rice fields, a farmer, and a rising sun conveys origin and the aromatic character of Thai Hom Mali rice.",
@@ -733,11 +733,11 @@ export const siteConfig = {
   description:
     "Chopra Creative is a founder-led product packaging and ecommerce design studio creating strategic, production-ready packaging and visual systems for consumer brands.",
   /**
-   * NOTE: this address uses "chopracreatives.com" (with an s) while the site
-   * lives on "chopracreative.com". Confirm which mailbox is real before
-   * launch — it is intentionally left unchanged here.
+   * Matches the site's domain. (It previously read "chopracreatives.com",
+   * which has no MX records and cannot receive mail.) Make sure "contact@"
+   * exists in the domain's email forwarding.
    */
-  email: "contact@chopracreatives.com",
+  email: "contact@chopracreative.com",
   url: "https://www.chopracreative.com",
   /** Add real profiles, e.g. { label: "LinkedIn", href: "https://…" }. */
   socials: [] as { label: string; href: string }[],
@@ -748,16 +748,16 @@ export const siteConfig = {
  * real information — nothing here should be invented.
  */
 export const founder = {
-  name: "[YOUR NAME]",
+  name: "Gulamm Mustfa",
   role: "Founder & Packaging Designer",
   /** Path under /public, e.g. "/images/founder.jpg". null shows a monogram. */
-  photo: null as string | null,
+  photo: "/images/founder.jpg" as string | null,
   intro:
-    "I'm [YOUR NAME], a product and packaging designer focused on creating packaging that does more than look good.",
+    "I'm Gulamm Mustfa, a product and packaging designer focused on creating packaging that does more than look good.",
   approach:
     "I think about what customers need to understand, what makes a product worth choosing, and how the final design needs to become accurate, production-ready artwork.",
   extension:
-    "Once the packaging works, I extend the same visual system into 3D product visualization, Amazon and A+ Content, Shopify product pages and launch creative — so the product looks like one brand everywhere it's sold.",
+    "Once the packaging works, I extend the same visual system into 3D product visualization, Amazon and A+ Content, Shopify product pages and launch creative, so the product looks like one brand everywhere it's sold.",
   /** e.g. "[X] years in packaging design" — leave empty until confirmed. */
   credentials: [] as string[],
 };
@@ -768,7 +768,7 @@ export const principles = [
     number: "01",
     title: "Communicate",
     lead: "Make the product immediately understandable.",
-    body: "The pack has to tell a shopper what the product is, who it's for and why it matters — in the few seconds it gets on a shelf or in a search result.",
+    body: "The pack has to tell a shopper what the product is, who it's for and why it matters, in the few seconds it gets on a shelf or in a search result.",
   },
   {
     number: "02",
@@ -780,7 +780,7 @@ export const principles = [
     number: "03",
     title: "Produce",
     lead: "Turn the approved design into real packaging.",
-    body: "Accurate dielines, bleed and safe margins, separated layers and print-ready files — so the design survives the press, the fold and the seal.",
+    body: "Accurate dielines, bleed and safe margins, separated layers and print-ready files, so the design survives the press, the fold and the seal.",
   },
 ];
 
@@ -788,7 +788,7 @@ export const processSteps = [
   {
     number: "01",
     title: "Strategy & Creative Direction",
-    body: "I start from the product's category, audience and competitors, then define what the pack must communicate first — and the visual language that will carry across every panel and SKU.",
+    body: "I start from the product's category, audience and competitors, then define what the pack must communicate first, and the visual language that will carry across every panel and SKU.",
   },
   {
     number: "02",
@@ -798,7 +798,7 @@ export const processSteps = [
   {
     number: "03",
     title: "Dieline & Production Artwork",
-    body: "Every pack is built to exact trim, bleed and safe-margin specs for its structure — pouch, jar label or carton — with layers separated for a clean handoff to your printer.",
+    body: "Every pack is built to exact trim, bleed and safe-margin specs for its structure (pouch, jar label or carton) with layers separated for a clean handoff to your printer.",
   },
   {
     number: "04",
@@ -810,7 +810,7 @@ export const processSteps = [
 export const readinessChecklist = [
   "Does your front panel survive being scaled down to a thumbnail, or does it rely on reading at arm's length?",
   "Is your packaging system consistent across every SKU in the line, or did each flavor get designed in isolation?",
-  "Do you have a production-ready dieline — trim, bleed, and safe margins — or only a flat visual comp?",
+  "Do you have a production-ready dieline (trim, bleed, and safe margins) or only a flat visual comp?",
   "Have you seen the pack in 3D before committing to a print run?",
 ];
 
@@ -834,7 +834,7 @@ export const services: Service[] = [
     id: "packaging-design",
     name: "Packaging Design",
     summary:
-      "Strategic packaging design from concept to production-ready artwork — the core of everything Chopra Creative does.",
+      "Strategic packaging design from concept to production-ready artwork, the core of everything Chopra Creative does.",
     includes: [
       "Packaging strategy",
       "Packaging design",
@@ -885,6 +885,20 @@ export function getService(id: ServiceId) {
   return services.find((s) => s.id === id)!;
 }
 
+/**
+ * How the packaging extends into ecommerce: one visual system, in order.
+ * Packaging is the core; everything after it is built from the same files.
+ */
+export const ecosystemSteps = [
+  { name: "Packaging", body: "Strategy, hierarchy and the pack design itself, the core of every project.", core: true },
+  { name: "Production", body: "Dielines and print-ready artwork your printer can run without rebuilding." },
+  { name: "Amazon", body: "Main and secondary images that keep the pack legible as a search thumbnail." },
+  { name: "A+ Content", body: "Modules that extend the packaging's color, type and claims onto the listing." },
+  { name: "Shopify", body: "Product-page creative that carries the pack's hierarchy onto your own store." },
+  { name: "Product launch", body: "3D renders and launch assets built from the final production files." },
+  { name: "Social", body: "Product and campaign creative that stays recognizable in a feed." },
+];
+
 /* -------------------------------------------------------------------------
  * Packages & pricing
  * ---------------------------------------------------------------------- */
@@ -894,7 +908,7 @@ export type ServicePackage = {
   name: string;
   tagline: string;
   bestFor: string;
-  /** Shown as "Starting at {price}". */
+  /** Shown as "From {price}". */
   price: string;
   scope: string[];
   /** The core package, visually emphasized. */
@@ -902,7 +916,7 @@ export type ServicePackage = {
 };
 
 export const pricingNote =
-  "Final pricing depends on SKU count, complexity and deliverables.";
+  "Final pricing depends on SKU count, format, complexity and deliverables.";
 
 export const servicePackages: ServicePackage[] = [
   {
@@ -910,12 +924,11 @@ export const servicePackages: ServicePackage[] = [
     name: "Launch",
     tagline: "Get your product ready for market.",
     bestFor: "A new product heading to market for the first time.",
-    price: "$1,250",
+    price: "$320",
     scope: [
       "Packaging design",
       "Production-ready files",
       "3D visualization",
-      "Essential ecommerce assets",
     ],
   },
   {
@@ -923,8 +936,8 @@ export const servicePackages: ServicePackage[] = [
     name: "Growth",
     tagline: "Build a complete visual system around your product.",
     bestFor:
-      "Brands selling on Amazon or Shopify that need packaging and ecommerce creative built as one system.",
-    price: "$2,750",
+      "Brands selling on Amazon that need packaging and listing creative built as one system.",
+    price: "$1,050",
     featured: true,
     scope: [
       "Packaging design",
@@ -932,8 +945,6 @@ export const servicePackages: ServicePackage[] = [
       "3D visualization",
       "Amazon images",
       "A+ Content",
-      "Shopify product creative",
-      "Launch & social creatives",
     ],
   },
   {
@@ -941,13 +952,13 @@ export const servicePackages: ServicePackage[] = [
     name: "Scale",
     tagline: "Build a scalable product visual system.",
     bestFor: "Multi-SKU lines that need one system across every product and channel.",
-    price: "$5,500",
+    price: "$2,200",
     scope: [
       "Multi-SKU packaging system",
       "Production artwork",
       "Amazon images",
       "A+ Content",
-      "Shopify",
+      "Shopify product creative",
       "Launch & social creatives",
       "Visual guidelines",
     ],
@@ -959,16 +970,15 @@ export const inquirySteps = [
   { title: "Start a project", body: "Share your product, channels, timeline and budget." },
   { title: "Qualification", body: "I review the brief and confirm it's a good fit." },
   { title: "Consultation", body: "A call to understand the product, market and production needs." },
-  { title: "Proposal", body: "A written scope, timeline and price — no surprises." },
+  { title: "Proposal", body: "A written scope, timeline and price, with no surprises." },
   { title: "Payment & kickoff", body: "Work starts once the proposal is approved." },
 ];
 
 export const launchAudit = {
   name: "Product Launch Audit",
   tagline:
-    "A focused review of how your product communicates — on pack, on Amazon and on Shopify — with clear priorities before you commit to a full project.",
-  /** Replace with the real audit price, e.g. "$350". */
-  price: "[PRICE]",
+    "A focused review of how your product communicates (on pack, on Amazon and on Shopify) with clear priorities before you commit to a full project.",
+  price: "$360",
   /**
    * Direct checkout link (e.g. a Stripe Payment Link). While null, the
    * button routes to the inquiry form instead.
@@ -1006,9 +1016,9 @@ export const testimonials: { quote: string; name: string; role: string }[] = [];
 export const inquiryOptions = {
   packages: [
     { value: "", label: "Not sure yet" },
-    { value: "launch", label: "Launch — starting at $1,250" },
-    { value: "growth", label: "Growth — starting at $2,750" },
-    { value: "scale", label: "Scale — starting at $5,500" },
+    { value: "launch", label: "Launch (from $320)" },
+    { value: "growth", label: "Growth (from $1,050)" },
+    { value: "scale", label: "Scale (from $2,200)" },
     { value: "audit", label: "Product Launch Audit" },
   ],
   skus: ["1", "2–5", "6–10", "10+"],
@@ -1025,5 +1035,5 @@ export const inquiryOptions = {
     "Complete product launch",
   ],
   timelines: ["As soon as possible", "Within 1–2 months", "In 3–6 months", "Flexible"],
-  budgets: ["Under $1,250", "$1,250 – $2,750", "$2,750 – $5,500", "$5,500+", "Not sure yet"],
+  budgets: ["Under $1,050", "$1,050 – $2,200", "$2,200 – $5,000", "$5,000+", "Not sure yet"],
 };

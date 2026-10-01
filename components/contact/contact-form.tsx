@@ -262,7 +262,7 @@ export function ContactForm() {
     return (
       <div role="status" className="py-10 text-center">
         <CheckCircle2 aria-hidden className="mx-auto h-10 w-10 text-foreground" />
-        <h2 className="mt-5 text-2xl font-bold tracking-tight">Thanks — your project is in.</h2>
+        <h2 className="mt-5 text-2xl font-bold tracking-tight">Thanks, your project is in.</h2>
         <p className="mx-auto mt-3 max-w-sm text-sm leading-relaxed text-muted">
           I&apos;ll review the details and reply with next steps and a time for
           a consultation.
@@ -316,7 +316,7 @@ export function ContactForm() {
           </Field>
         </div>
         <ChipGroup
-          legend="Where will it sell?"
+          legend="Sales channels"
           name="channels"
           options={inquiryOptions.channels}
           errorId={`${id("channels")}-error`}
@@ -357,7 +357,7 @@ export function ContactForm() {
         <Field id={id("details")} label="Tell me about the project" error={errors.details}>
           <textarea
             rows={5}
-            placeholder="Packaging structure, what exists today, launch goals — and a link to any files (Drive, Dropbox) if you have them."
+            placeholder="Packaging structure, what exists today, launch goals, and a link to any files (Drive, Dropbox) if you have them."
             {...text("details")}
             className={cn(text("details").className, "resize-y")}
           />

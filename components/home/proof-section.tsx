@@ -16,7 +16,7 @@ export function ProofSection() {
   const facts = [
     { value: String(caseStudies.length), label: "Published case studies" },
     { value: String(industries.length), label: "Product categories" },
-    { value: "5", label: `SKUs in one system — ${largestSkuLine.client}` },
+    { value: "5", label: `SKUs in one system: ${largestSkuLine.client}` },
     { value: "100%", label: "Of case studies include a production dieline" },
   ];
 
@@ -72,7 +72,7 @@ export function ProofSection() {
                 </blockquote>
                 <figcaption className="mt-5 text-sm">
                   <span className="font-semibold">{t.name}</span>
-                  <span className="text-muted"> — {t.role}</span>
+                  <span className="text-muted">, {t.role}</span>
                 </figcaption>
               </figure>
             ))}
@@ -80,7 +80,7 @@ export function ProofSection() {
         ) : (
           isDev && (
             <div className="mt-14 rounded-[28px] border-2 border-dashed border-highlight/50 p-7 text-sm text-muted">
-              <strong className="text-highlight">[TESTIMONIAL]</strong> — dev-only
+              <strong className="text-highlight">[TESTIMONIAL]</strong>: dev-only
               placeholder. Add real, client-approved quotes to{" "}
               <code>testimonials</code> in <code>lib/data.ts</code>; this block is
               hidden in production until then.

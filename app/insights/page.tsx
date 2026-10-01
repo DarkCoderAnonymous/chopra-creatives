@@ -10,7 +10,7 @@ import { insights } from "@/lib/insights";
 import { breadcrumbSchema, JsonLd } from "@/lib/schema";
 
 export const metadata: Metadata = {
-  title: "Insights — Packaging, Production & Ecommerce",
+  title: "Insights: Packaging, Production & Ecommerce",
   description:
     "Practical notes on product packaging design: hierarchy, production-ready artwork, dielines, multi-SKU systems, Amazon images and A+ Content design.",
   alternates: { canonical: "/insights" },
@@ -40,7 +40,7 @@ export default function InsightsPage() {
           <Reveal delay={0.35}>
             <p className="mt-7 max-w-2xl text-lg leading-relaxed text-muted">
               How packaging communicates, how it gets produced, and how it
-              carries into Amazon and Shopify — written from real projects.
+              carries into Amazon and Shopify, written from real projects.
             </p>
           </Reveal>
         </Container>

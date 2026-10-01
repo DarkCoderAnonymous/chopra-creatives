@@ -12,7 +12,7 @@ import { founder } from "@/lib/data";
 import { breadcrumbSchema, JsonLd, personSchema } from "@/lib/schema";
 
 export const metadata: Metadata = {
-  title: "About — Founder-Led Packaging Design Studio",
+  title: "About: Founder-Led Packaging Design Studio",
   description:
     "Chopra Creative is a specialist product packaging and ecommerce design studio, led by a packaging designer who designs for both the shelf and the press.",
   alternates: { canonical: "/about" },
@@ -55,7 +55,7 @@ export default function AboutPage() {
               </p>
               <p>
                 The portfolio spans supplements, pet care, gourmet snacks,
-                kitchenware, food staples and custom packaging — jar labels,
+                kitchenware, food staples and custom packaging: jar labels,
                 gusset pouches, stand-up pouches, folding cartons and a
                 hand-assembled cup sleeve. The structure changes from project
                 to project; the discipline doesn&apos;t.

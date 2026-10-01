@@ -37,11 +37,11 @@ export async function generateMetadata({
   if (!study) return {};
 
   return {
-    title: `${study.title} — ${study.industry} Packaging Design Case Study`,
+    title: `${study.title}: ${study.industry} Packaging Design Case Study`,
     description: `${study.tagline} Packaging strategy, design, dieline and production artwork for ${study.client}.`,
     alternates: { canonical: `/work/${study.slug}` },
     openGraph: {
-      title: `${study.title} — Chopra Creative`,
+      title: `${study.title} | Chopra Creative`,
       description: study.tagline,
       images: [{ url: study.heroImage.src, alt: study.heroImage.alt }],
     },
@@ -111,11 +111,11 @@ export default async function CaseStudyPage({
   const indexOf = (src: string) => images.findIndex((img) => img.src === src);
 
   const chapters = [
-    { id: "problem", title: "Problem" },
+    { id: "challenge", title: "Challenge" },
     { id: "strategy", title: "Strategy" },
     { id: "design", title: "Design" },
     { id: "production", title: "Production" },
-    { id: "ecommerce", title: hasEcommerce ? "Ecommerce" : "Shelf & screen" },
+    { id: "ecommerce", title: "Ecommerce" },
     { id: "result", title: "Result" },
     { id: "why-it-works", title: "Why it works" },
   ];
@@ -231,7 +231,7 @@ export default async function CaseStudyPage({
               </nav>
 
               <div className="min-w-0 max-w-3xl space-y-20 md:space-y-24">
-                <Chapter id="problem" number={num("problem")} title="Problem">
+                <Chapter id="challenge" number={num("challenge")} title="Challenge">
                   <Paragraphs items={study.challenge} />
                 </Chapter>
 
@@ -250,7 +250,10 @@ export default async function CaseStudyPage({
                   </div>
                   {study.gallery.length > 0 && (
                     <div className="mt-12">
-                      <GalleryGrid indices={study.gallery.map((img) => indexOf(img.src))} />
+                      <GalleryGrid
+                        label="Renders & mockups"
+                        indices={study.gallery.map((img) => indexOf(img.src))}
+                      />
                     </div>
                   )}
                 </Chapter>
@@ -290,11 +293,10 @@ export default async function CaseStudyPage({
                   </div>
                 </Chapter>
 
-                <Chapter
-                  id="ecommerce"
-                  number={num("ecommerce")}
-                  title={hasEcommerce ? "Ecommerce" : "Shelf & screen"}
-                >
+                <Chapter id="ecommerce" number={num("ecommerce")} title="Ecommerce">
+                  <p className="mb-6 text-sm text-muted">
+                    How the pack was designed to work on screen as well as on shelf.
+                  </p>
                   <div className="grid gap-6 sm:grid-cols-2">
                     {study.presence.map((item) => (
                       <div key={item.title}>
@@ -312,7 +314,7 @@ export default async function CaseStudyPage({
                   )}
                   {!hasEcommerce && isDev && (
                     <p className="mt-8 rounded-2xl border-2 border-dashed border-highlight/50 p-5 text-sm text-muted">
-                      <strong className="text-highlight">[ECOMMERCE ASSETS]</strong> — dev-only
+                      <strong className="text-highlight">[ECOMMERCE ASSETS]</strong>: dev-only
                       placeholder. Add real Amazon / A+ / Shopify / social images to{" "}
                       <code>ecommerceImages</code> for this study to show them here.
                     </p>
@@ -331,7 +333,7 @@ export default async function CaseStudyPage({
                   ) : (
                     isDev && (
                       <p className="mb-8 rounded-2xl border-2 border-dashed border-highlight/50 p-5 text-sm text-muted">
-                        <strong className="text-highlight">[CLIENT RESULT]</strong> — dev-only
+                        <strong className="text-highlight">[CLIENT RESULT]</strong>: dev-only
                         placeholder. Add verified, client-approved results to{" "}
                         <code>results</code>; this note never renders in production.
                       </p>
@@ -377,7 +379,7 @@ export default async function CaseStudyPage({
                       Start a {study.industry.toLowerCase()} packaging project.
                     </p>
                     <p className="mt-3 max-w-lg text-sm leading-relaxed text-background/70">
-                      Related service: {service.name} — {service.summary}
+                      Related service: {service.name}. {service.summary}
                     </p>
                     <div className="mt-7 flex flex-wrap gap-3">
                       <ButtonLink href="/contact" variant="inverse" arrow magnetic={false}>

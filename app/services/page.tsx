@@ -10,13 +10,14 @@ import { PricingSection } from "@/components/home/pricing-section";
 import { AuditSection } from "@/components/home/audit-section";
 import { ProcessSection } from "@/components/home/process-section";
 import { CtaSection } from "@/components/home/cta-section";
+import { EcosystemFlow } from "@/components/home/ecosystem-flow";
 import { caseStudies, services, type ServiceId } from "@/lib/data";
 import { breadcrumbSchema, JsonLd, serviceSchema } from "@/lib/schema";
 
 export const metadata: Metadata = {
-  title: "Packaging Design Services — Packaging, Amazon & Shopify",
+  title: "Packaging Design Services: Packaging, Amazon & Shopify",
   description:
-    "Product packaging design services from strategy to production-ready artwork, extended into Amazon images, A+ Content design and Shopify product creative.",
+    "Packaging design services from a founder-led studio: production-ready packaging design, Amazon packaging design, Amazon A+ Content design and Shopify product design.",
   alternates: { canonical: "/services" },
 };
 
@@ -35,19 +36,12 @@ const DETAILS: Record<ServiceId, { forWho: string; work: string[]; workLabel: st
   },
   "brand-growth-system": {
     forWho:
-      "Multi-SKU lines and growing brands adding flavors, sizes or ranges — where every new product has to look like part of one family.",
+      "Multi-SKU lines and growing brands adding flavors, sizes or ranges, where every new product has to look like part of one family.",
     work: ["dumbbell-nuts"],
     workLabel: "Multi-SKU case study",
   },
 };
 
-const CHANNELS = [
-  { name: "Packaging", body: "The strategy, hierarchy and production-ready artwork everything else is built on." },
-  { name: "3D visualization", body: "Photorealistic renders from the final artwork, for approvals, listings and launch." },
-  { name: "Amazon", body: "Main and secondary images, infographics and A+ Content in the same visual language." },
-  { name: "Shopify", body: "Product-page creative that carries the pack's hierarchy onto your own store." },
-  { name: "Social", body: "Launch and product creative that keeps the brand recognizable in a feed." },
-];
 
 export default function ServicesPage() {
   return (
@@ -78,8 +72,13 @@ export default function ServicesPage() {
             <p className="mt-7 max-w-2xl text-lg leading-relaxed text-muted">
               Packaging is the core expertise: strategic design and
               production-ready artwork. The same visual system is then extended
-              into 3D, Amazon, A+ Content, Shopify and launch creative — so the
+              into 3D, Amazon, A+ Content, Shopify and launch creative, so the
               product looks like one brand everywhere it&apos;s sold.
+            </p>
+            <p className="mt-4 max-w-2xl text-base leading-relaxed text-muted">
+              Unlike a large packaging design agency, Chopra Creative is
+              founder-led: the packaging designer who scopes your project is
+              the one who designs it and prepares the production files.
             </p>
           </Reveal>
           <Reveal delay={0.45}>
@@ -182,24 +181,9 @@ export default function ServicesPage() {
           <SectionHeading
             eyebrow="One visual system"
             title="Your product doesn't stop at the *package.*"
-            description="A modern product is seen on a shelf, in a 3D render, on Amazon, on Shopify and in a feed. These assets are designed as one coherent system — starting from the packaging."
+            description="Packaging → Production → Amazon → A+ Content → Shopify → Product launch → Social. Every asset is designed as one coherent system, built from the approved packaging files."
           />
-          <ol className="mt-14 grid gap-px overflow-hidden rounded-[28px] border border-border bg-border sm:grid-cols-2 lg:grid-cols-5">
-            {CHANNELS.map((c, i) => (
-              <Reveal
-                key={c.name}
-                as="li"
-                delay={i * 0.06}
-                className={i === 0 ? "bg-foreground p-6 text-background md:p-7" : "bg-background p-6 md:p-7"}
-              >
-                <span className="font-display text-2xl italic leading-none opacity-40">0{i + 1}</span>
-                <p className="mt-4 text-lg font-semibold tracking-tight">{c.name}</p>
-                <p className={i === 0 ? "mt-2 text-sm leading-relaxed text-background/70" : "mt-2 text-sm leading-relaxed text-muted"}>
-                  {c.body}
-                </p>
-              </Reveal>
-            ))}
-          </ol>
+          <EcosystemFlow className="mt-14" />
         </Container>
       </section>
 

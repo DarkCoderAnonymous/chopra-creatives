@@ -71,7 +71,7 @@ const packageLabel = (value: string) =>
 
 /** Plain-text summary used for both the email body and the mailto fallback. */
 export function formatInquiry(d: Inquiry) {
-  const line = (label: string, value: string) => `${label}: ${value || "—"}`;
+  const line = (label: string, value: string) => `${label}: ${value || "Not provided"}`;
   return [
     line("Name", d.name),
     line("Company", d.company),
@@ -96,4 +96,4 @@ export function formatInquiry(d: Inquiry) {
 }
 
 export const inquirySubject = (d: Inquiry) =>
-  `New project inquiry — ${d.company || d.name}${d.product ? ` (${d.product})` : ""}`;
+  `New project inquiry: ${d.company || d.name}${d.product ? ` (${d.product})` : ""}`;

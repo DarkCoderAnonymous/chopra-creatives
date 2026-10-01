@@ -61,7 +61,7 @@ export function FounderSection({ linkToAbout = true }: { linkToAbout?: boolean }
           <Reveal delay={0.25}>
             <p className="mt-8 text-sm">
               <span className="font-semibold">{founder.name}</span>
-              <span className="text-muted"> — {founder.role}, Chopra Creative</span>
+              <span className="text-muted">, {founder.role}, Chopra Creative</span>
             </p>
           </Reveal>
           {linkToAbout && (

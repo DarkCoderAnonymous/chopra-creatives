@@ -260,7 +260,13 @@ export function GalleryTile({
 }
 
 /** Editorial grid for the case-study shots. */
-export function GalleryGrid({ indices }: { indices: number[] }) {
+export function GalleryGrid({
+  indices,
+  label = "Gallery",
+}: {
+  indices: number[];
+  label?: string;
+}) {
   const { images } = useGallery();
   const featureFirst = indices.length % 2 === 1;
 
@@ -272,7 +278,7 @@ export function GalleryGrid({ indices }: { indices: number[] }) {
             aria-hidden
             className="h-px w-8 bg-[linear-gradient(90deg,var(--grad-b),var(--grad-e))]"
           />
-          Gallery
+          {label}
         </p>
         <p className="text-xs text-muted">{images.length} images · tap to expand</p>
       </div>

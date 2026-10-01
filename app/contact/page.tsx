@@ -9,7 +9,7 @@ import { ContactForm } from "@/components/contact/contact-form";
 import { readinessChecklist, siteConfig } from "@/lib/data";
 
 export const metadata: Metadata = {
-  title: "Start a Project — Packaging & Ecommerce Design",
+  title: "Start a Project: Packaging & Ecommerce Design",
   description:
     "Start a product packaging or ecommerce design project with Chopra Creative. Share your product, SKUs, channels, timeline and budget to get a proposal.",
   alternates: { canonical: "/contact" },
@@ -36,7 +36,7 @@ export default function ContactPage() {
             <p className="mt-6 max-w-md text-lg leading-relaxed text-muted">
               Tell me about the product, where it sells and what it needs.
               After a short qualification and consultation you&apos;ll get a
-              written proposal — payment only once the scope is agreed.
+              written proposal, payment only once the scope is agreed.
             </p>
           </Reveal>
 
